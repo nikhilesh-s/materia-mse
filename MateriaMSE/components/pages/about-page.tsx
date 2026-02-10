@@ -14,7 +14,7 @@ export function AboutPage({ isActive }: AboutPageProps) {
           <p>We believe materials are the building blocks of progress—from the composites in spacecraft to the biomaterials in medicine—and that everyone should have the chance to explore how they work.</p>
 
           <h2 className="text-2xl font-semibold text-heading-light !mb-3 !mt-8">Why I Started Materia</h2>
-          <p>My name is Nikhilesh Suravarjala, and I&apos;m a high school student with a passion for engineering, storytelling, and making information approachable. As someone constantly curious about how things are built—and why some materials are chosen over others—I found it frustrating how complex and scattered the information on materials science was.</p>
+          <p>My name is Nikhilesh Suravarjjala, and I&apos;m a high school student with a passion for engineering, storytelling, and making information approachable. As someone constantly curious about how things are built—and why some materials are chosen over others—I found it frustrating how complex and scattered the information on materials science was.</p>
           <p>So I created Materia. Not because I&apos;m an expert, but because I believe that being a beginner is actually a superpower. Materia exists to answer the questions we all have when we&apos;re just starting out—and to grow with us as we go deeper.</p>
 
           <h2 className="text-2xl font-semibold text-heading-light !mb-3 !mt-8">What We Offer</h2>

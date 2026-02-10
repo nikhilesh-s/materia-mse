@@ -53,7 +53,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-[var(--border-light)] md:flex md:items-center md:justify-between">
-          <p className="text-sm text-[var(--text-secondary-light)] md:order-1">© 2025 Materia MSE by Nikhilesh Suravarjala. All rights reserved.</p>
+          <p className="text-sm text-[var(--text-secondary-light)] md:order-1">© 2025 Materia MSE by Nikhilesh Suravarjjala. All rights reserved.</p>
           <div className="mt-4 md:mt-0 md:order-2 text-sm">
             <a href="#" className="footer-link hover:underline mr-4">Privacy Policy</a>
             <a href="#" className="footer-link hover:underline">Terms of Service</a>

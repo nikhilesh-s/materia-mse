@@ -36,7 +36,7 @@ export function BlogPage({ isActive }: BlogPageProps) {
             excerpt: 'A beginner\'s guide to how materials shape our daily lives—from toothbrushes to space travel.',
             featured_image: 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg',
             category: 'Basics',
-            author: 'Nikhilesh Suravarjala',
+            author: 'Nikhilesh Suravarjjala',
             created_at: new Date().toISOString(),
             slug: 'why-materials-matter-more-than-you-think'
           },
@@ -46,7 +46,7 @@ export function BlogPage({ isActive }: BlogPageProps) {
             excerpt: 'A fresh take on plastics and their overlooked potential in sustainability.',
             featured_image: 'https://images.pexels.com/photos/2233416/pexels-photo-2233416.jpeg',
             category: 'Polymers',
-            author: 'Nikhilesh Suravarjala',
+            author: 'Nikhilesh Suravarjjala',
             created_at: new Date().toISOString(),
             slug: 'plastic-isnt-the-problem-understanding-polymers'
           },
@@ -56,7 +56,7 @@ export function BlogPage({ isActive }: BlogPageProps) {
             excerpt: 'Which metal wins in strength, cost, weight, and versatility?',
             featured_image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg',
             category: 'Metals',
-            author: 'Nikhilesh Suravarjala',
+            author: 'Nikhilesh Suravarjjala',
             created_at: new Date().toISOString(),
             slug: 'steel-vs-aluminum-the-ultimate-face-off'
           }

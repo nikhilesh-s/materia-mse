@@ -28,8 +28,11 @@ Deno.serve(async (req: Request) => {
     console.log('Sending newsletter email to:', email)
 
     // Get environment variables
-    const resendApiKey = Deno.env.get('RESEND_API_KEY') || 're_iKL9MbpS_CGkpw81ALHCPFAr28dSWeXch'
-    const siteUrl = Deno.env.get('NEXT_PUBLIC_SITE_URL') || 'https://materiamse.com'
+    const resendApiKey = Deno.env.get('RESEND_API_KEY')
+    const siteUrl = Deno.env.get('NEXT_PUBLIC_SITE_URL') || 'https://yourdomain.com'
+    if (!resendApiKey) {
+      throw new Error('RESEND_API_KEY is not set')
+    }
 
     // Send newsletter email
     const emailResponse = await fetch('https://api.resend.com/emails', {

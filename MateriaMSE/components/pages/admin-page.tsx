@@ -56,7 +56,7 @@ export function AdminPage({ isActive }: AdminPageProps) {
     excerpt: '',
     featured_image: '',
     category: 'Basics',
-    author: 'Nikhilesh Suravarjala',
+    author: 'Nikhilesh Suravarjjala',
     slug: ''
   });
   const [savingPost, setSavingPost] = useState(false);
@@ -217,7 +217,7 @@ export function AdminPage({ isActive }: AdminPageProps) {
           excerpt: '',
           featured_image: '',
           category: 'Basics',
-          author: 'Nikhilesh Suravarjala',
+          author: 'Nikhilesh Suravarjjala',
           slug: ''
         });
         setShowCreatePost(false);
@@ -285,7 +285,7 @@ export function AdminPage({ isActive }: AdminPageProps) {
           excerpt: '',
           featured_image: '',
           category: 'Basics',
-          author: 'Nikhilesh Suravarjala',
+          author: 'Nikhilesh Suravarjjala',
           slug: ''
         });
         setEditingPost(null);
@@ -309,7 +309,7 @@ export function AdminPage({ isActive }: AdminPageProps) {
       excerpt: '',
       featured_image: '',
       category: 'Basics',
-      author: 'Nikhilesh Suravarjala',
+      author: 'Nikhilesh Suravarjjala',
       slug: ''
     });
   };
@@ -693,7 +693,7 @@ export function AdminPage({ isActive }: AdminPageProps) {
                         excerpt: '',
                         featured_image: '',
                         category: 'Basics',
-                        author: 'Nikhilesh Suravarjala',
+                        author: 'Nikhilesh Suravarjjala',
                         slug: ''
                       });
                     }}

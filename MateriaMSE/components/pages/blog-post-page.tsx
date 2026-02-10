@@ -50,7 +50,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
             content: '<p>Materials science is everywhere around us, from the smartphone in your pocket to the buildings we live in. Understanding materials helps us innovate and solve real-world problems.</p><p>In this post, we\'ll explore how different materials shape our daily lives and why studying them is crucial for future innovations.</p><h2>The Building Blocks of Innovation</h2><p>Every technological advancement relies on materials. Whether it\'s developing stronger, lighter composites for aerospace or creating biodegradable plastics for environmental sustainability, materials science is at the heart of progress.</p>',
             featured_image: 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg',
             category: 'Basics',
-            author: 'Nikhilesh Suravarjala',
+            author: 'Nikhilesh Suravarjjala',
             created_at: new Date().toISOString(),
             slug: 'why-materials-matter-more-than-you-think'
           }

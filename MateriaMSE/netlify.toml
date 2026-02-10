@@ -11,11 +11,11 @@
 
 # Environment variables for production
 [context.production.environment]
-  NEXT_PUBLIC_SUPABASE_URL = "https://srwsvcxqqusbxwihfgrz.supabase.co"
-  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyd3N2Y3hxcXVzYnh3aWhmZ3J6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk1OTE3NzcsImV4cCI6MjA2NTE2Nzc3N30.Npb1QRYsP96l7j8qljrpwpj4gAB-kYGhR2adQ6FPyJ8"
-  RESEND_API_KEY = "re_iKL9MbpS_CGkpw81ALHCPFAr28dSWeXch"
-  ADMIN_EMAIL = "newsletter@materiamse.com"
-  NEXT_PUBLIC_SITE_URL = "https://materiamse.com"
+  NEXT_PUBLIC_SUPABASE_URL = "your_supabase_url_here"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "your_supabase_anon_key_here"
+  RESEND_API_KEY = "your_resend_api_key_here"
+  ADMIN_EMAIL = "admin@yourdomain.com"
+  NEXT_PUBLIC_SITE_URL = "https://yourdomain.com"
 
 # Headers for security and performance
 [[headers]]

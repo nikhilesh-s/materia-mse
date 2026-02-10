@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS blog_posts (
   excerpt text NOT NULL,
   featured_image text,
   category text NOT NULL DEFAULT 'Basics',
-  author text NOT NULL DEFAULT 'Nikhilesh Suravarjala',
+  author text NOT NULL DEFAULT 'Nikhilesh Suravarjjala',
   published boolean DEFAULT false,
   slug text UNIQUE NOT NULL,
   created_at timestamptz DEFAULT now(),
@@ -191,7 +191,7 @@ INSERT INTO blog_posts (title, content, excerpt, featured_image, category, autho
   'A beginner''s guide to how materials shape our daily lives—from toothbrushes to space travel.',
   'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg',
   'Basics',
-  'Nikhilesh Suravarjala',
+  'Nikhilesh Suravarjjala',
   true,
   'why-materials-matter-more-than-you-think'
 ),
@@ -201,7 +201,7 @@ INSERT INTO blog_posts (title, content, excerpt, featured_image, category, autho
   'A fresh take on plastics and their overlooked potential in sustainability.',
   'https://images.pexels.com/photos/2233416/pexels-photo-2233416.jpeg',
   'Polymers',
-  'Nikhilesh Suravarjala',
+  'Nikhilesh Suravarjjala',
   true,
   'plastic-isnt-the-problem-understanding-polymers'
 ),
@@ -211,7 +211,7 @@ INSERT INTO blog_posts (title, content, excerpt, featured_image, category, autho
   'Which metal wins in strength, cost, weight, and versatility?',
   'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg',
   'Metals',
-  'Nikhilesh Suravarjala',
+  'Nikhilesh Suravarjjala',
   true,
   'steel-vs-aluminum-the-ultimate-face-off'
 );
