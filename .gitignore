@@ -4,10 +4,12 @@ node_modules/
 # Next.js
 .next/
 out/
+.vercel/
 
 # Env
 .env
 .env.*
+!.env.example
 
 # Logs
 npm-debug.log*

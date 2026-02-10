@@ -16,7 +16,7 @@ A modern, full-featured materials science community platform built with Next.js,
 - **Frontend**: Next.js 13, TypeScript, Tailwind CSS
 - **Backend**: Supabase (PostgreSQL, Auth, Edge Functions)
 - **Email**: Resend API
-- **Deployment**: Netlify
+- **Deployment**: Vercel
 - **Icons**: Tabler Icons
 
 ## Setup Instructions
@@ -31,7 +31,7 @@ A modern, full-featured materials science community platform built with Next.js,
 
 ### 2. Environment Variables
 
-Create a `.env.local` file in the root directory:
+Create a `.env.local` file in the root directory (see `.env.example`):
 
 ```env
 # Supabase Configuration
@@ -85,19 +85,25 @@ npm run dev
 npm run build
 ```
 
-## Deployment
+## Deployment (Vercel)
 
-The project is configured for Netlify deployment with the included `netlify.toml` file.
-
-### Environment Variables for Production
-
-Make sure to set these environment variables in your Netlify dashboard:
+Deploy on Vercel and set these environment variables in the Vercel project settings:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `RESEND_API_KEY` (optional)
 - `ADMIN_EMAIL` (optional)
+- `NEXT_PUBLIC_SITE_URL`
+
+## Adding Pages/Routes
+
+This project uses a single-page layout with hash routing in `MainContent`.
+To add a new section:
+
+1. Create a new component in `components/pages/`.
+2. Export it from `components/pages/index.tsx`.
+3. Render it in `components/main-content.tsx` and map it to a hash.
 
 ## Usage
 
