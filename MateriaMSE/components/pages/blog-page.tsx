@@ -160,7 +160,7 @@ export function BlogPage({ isActive }: BlogPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => (
               <article key={post.id} className={`insight-card flex flex-col group animate-slide-in-up delay-${(index % 6 + 1) * 100}`}>
-                <a href={`#blog-post-${post.slug}`} className="page-link block overflow-hidden">
+                <a href={`/blog/${post.slug}`} className="page-link block overflow-hidden">
                   <div className="relative w-full h-48">
                     <Image 
                       src={post.featured_image || 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg'} 
@@ -178,7 +178,7 @@ export function BlogPage({ isActive }: BlogPageProps) {
                     </span>
                   </div>
                   <h3 className="text-lg font-semibold mb-2 leading-snug flex-grow">
-                    <a href={`#blog-post-${post.slug}`} className="page-link hover:text-[var(--accent-primary)] transition duration-200">
+                    <a href={`/blog/${post.slug}`} className="page-link hover:text-[var(--accent-primary)] transition duration-200">
                       {post.title}
                     </a>
                   </h3>

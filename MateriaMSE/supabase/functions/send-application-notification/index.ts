@@ -80,11 +80,11 @@ Deno.serve(async (req: Request) => {
             <p style="font-size: 16px; line-height: 1.6;">In the meantime, feel free to explore our blog and learn more about materials science!</p>
 
             <div style="text-align: center; margin: 30px 0;">
-              <a href="${siteUrl}/#blog" 
+              <a href="${siteUrl}/blog" 
                  style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 600; margin-right: 10px;">
                 Read Our Blog
               </a>
-              <a href="${siteUrl}/#about" 
+              <a href="${siteUrl}/about" 
                  style="background-color: #f8fafd; color: #059669; border: 2px solid #059669; padding: 10px 22px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 600;">
                 Learn More
               </a>
@@ -145,7 +145,7 @@ Deno.serve(async (req: Request) => {
             </div>
 
             <div style="text-align: center; margin: 30px 0;">
-              <a href="${siteUrl}/#admin" 
+              <a href="${siteUrl}/admin" 
                  style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 600;">
                 Review in Admin Dashboard
               </a>

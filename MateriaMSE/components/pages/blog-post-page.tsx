@@ -180,7 +180,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
     return (
       <section id="page-blog-post" className="page-section active py-16 md:py-24 bg-[var(--bg-soft-light)]">
         <div className="content-container max-w-4xl mx-auto">
-          <a href="#blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</a>
+          <a href="/blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</a>
           <div className="placeholder-content">
             <h1 className="text-2xl md:text-3xl font-bold mb-4">Post Not Found</h1>
             <p className="text-secondary">The requested blog post could not be found.</p>
@@ -193,7 +193,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
   return (
     <section id="page-blog-post" className="page-section active py-16 md:py-24 bg-[var(--bg-soft-light)]">
       <div className="content-container max-w-4xl mx-auto">
-        <a href="#blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</a>
+        <a href="/blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</a>
         
         <article className="bg-[var(--bg-light)] rounded-lg shadow-lg overflow-hidden mb-12">
           {post.featured_image && (

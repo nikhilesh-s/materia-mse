@@ -128,10 +128,10 @@ export function HomePage({ isActive }: HomePageProps) {
                 Join our community to explore materials science through insightful blog posts, connect with fellow enthusiasts, and share your passion for the building blocks of innovation. 
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in delay-100">
-                <a href="#blog" className="page-link hero-button-primary inline-flex items-center justify-center"> 
+                <a href="/blog" className="page-link hero-button-primary inline-flex items-center justify-center"> 
                   Read Blog <i className="ti ti-chevron-right ml-1.5 text-sm"></i> 
                 </a>
-                <a href="#join" className="page-link hero-button-secondary inline-flex items-center justify-center"> 
+                <a href="/join" className="page-link hero-button-secondary inline-flex items-center justify-center"> 
                   Join Community <i className="ti ti-users ml-1.5"></i> 
                 </a>
               </div>
@@ -198,7 +198,7 @@ export function HomePage({ isActive }: HomePageProps) {
             <div>
               <h3 className="text-xl font-semibold mb-3">Connect & Learn</h3>
               <p className="text-secondary mb-6">Join our community of materials scientists, engineers, and enthusiasts. Share insights, ask questions, and stay updated with the latest in materials science.</p>
-              <a href="#join" className="page-link hero-button-primary inline-flex items-center justify-center w-full sm:w-auto"> 
+              <a href="/join" className="page-link hero-button-primary inline-flex items-center justify-center w-full sm:w-auto"> 
                 Join Now <i className="ti ti-user-plus ml-1.5"></i> 
               </a>
             </div>

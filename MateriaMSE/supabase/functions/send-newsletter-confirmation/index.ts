@@ -62,7 +62,7 @@ Deno.serve(async (req: Request) => {
             </div>
 
             <div style="text-align: center; margin: 30px 0;">
-              <a href="${siteUrl}/#blog" 
+              <a href="${siteUrl}/blog" 
                  style="background-color: #059669; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 600;">
                 Explore Our Blog
               </a>
@@ -101,7 +101,7 @@ Deno.serve(async (req: Request) => {
               <p><strong>Subscribed at:</strong> ${new Date().toLocaleString()}</p>
             </div>
             <p style="margin-top: 20px;">
-              <a href="${siteUrl}/#admin" style="color: #059669;">View in Admin Dashboard</a>
+              <a href="${siteUrl}/admin" style="color: #059669;">View in Admin Dashboard</a>
             </p>
           </div>
         `,

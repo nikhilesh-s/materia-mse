@@ -535,7 +535,7 @@ export function AdminPage({ isActive }: AdminPageProps) {
             </form>
             
             <div className="mt-6 pt-6 border-t border-[var(--border-light)] text-center">
-              <a href="#home" className="page-link text-[var(--text-secondary-light)] hover:text-[var(--accent-primary)] text-sm">
+              <a href="/" className="page-link text-[var(--text-secondary-light)] hover:text-[var(--accent-primary)] text-sm">
                 ← Back to Home
               </a>
             </div>

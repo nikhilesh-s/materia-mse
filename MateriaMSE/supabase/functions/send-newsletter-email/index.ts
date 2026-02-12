@@ -57,7 +57,7 @@ Deno.serve(async (req: Request) => {
             </div>
 
             <div style="text-align: center; margin: 30px 0;">
-              <a href="${siteUrl}/#blog-post-${blogSlug}" 
+              <a href="${siteUrl}/blog/${blogSlug}" 
                  style="background-color: #059669; color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: 600; font-size: 16px;">
                 Read the Full Post
               </a>
@@ -67,9 +67,9 @@ Deno.serve(async (req: Request) => {
               <h3 style="color: #059669; margin-top: 0;">While you're here...</h3>
               <p style="margin: 10px 0;">Check out our other resources:</p>
               <ul style="margin: 0; padding-left: 20px;">
-                <li><a href="${siteUrl}/#blog" style="color: #059669;">Browse all blog posts</a></li>
-                <li><a href="${siteUrl}/#about" style="color: #059669;">Learn about our community</a></li>
-                <li><a href="${siteUrl}/#join" style="color: #059669;">Join our community</a></li>
+                <li><a href="${siteUrl}/blog" style="color: #059669;">Browse all blog posts</a></li>
+                <li><a href="${siteUrl}/about" style="color: #059669;">Learn about our community</a></li>
+                <li><a href="${siteUrl}/join" style="color: #059669;">Join our community</a></li>
               </ul>
             </div>
 
@@ -78,7 +78,7 @@ Deno.serve(async (req: Request) => {
                 You're receiving this email because you subscribed to the Materia MSE newsletter.
                 <br><br>
                 <a href="${siteUrl}" style="color: #059669;">Visit our website</a> | 
-                <a href="${siteUrl}/#blog" style="color: #059669;">Read more posts</a>
+                <a href="${siteUrl}/blog" style="color: #059669;">Read more posts</a>
               </p>
             </div>
           </div>

@@ -124,7 +124,7 @@ export function ExplorePage({ isActive }: ExplorePageProps) {
             <p className="text-lg text-secondary mb-6">
               We want your ideas too. Have an idea for a way to make MSE knowledge more accessible?
             </p>
-            <a href="#join" className="page-link inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-8 py-3 rounded-lg shadow-md text-lg transition duration-300 transform hover:-translate-y-1">
+            <a href="/join" className="page-link inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-8 py-3 rounded-lg shadow-md text-lg transition duration-300 transform hover:-translate-y-1">
               Join Us <i className="ti ti-arrow-right ml-2"></i>
             </a>
           </div>

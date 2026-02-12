@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { MoleculeDiamondIcon } from '@/components/icons/molecule-diamond';
 
 export function Footer() {
@@ -6,26 +7,26 @@ export function Footer() {
       <div className="content-container">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
           <div className="col-span-2 lg:col-span-2 pr-8">
-            <a href="#home" className="page-link inline-flex items-center space-x-2.5 mb-4">
+            <Link href="/" className="page-link inline-flex items-center space-x-2.5 mb-4">
               <MoleculeDiamondIcon className="h-7 w-auto text-[var(--accent-primary)]" />
               <span className="text-lg font-semibold text-[var(--text-heading-light)]">Materia</span>
-            </a>
+            </Link>
             <p className="text-sm leading-relaxed">Exploring the fundamental building blocks that shape our world. Making materials science accessible, engaging, and inspiring.</p>
           </div>
           <div>
             <h5 className="text-sm font-semibold text-[var(--text-primary-light)] mb-4">Navigation</h5>
             <ul className="space-y-2">
-              <li><a href="#blog" className="page-link footer-link">Blog</a></li>
-              <li><a href="#resources" className="page-link footer-link">Resources</a></li>
-              <li><a href="#explore" className="page-link footer-link">Explore</a></li>
-              <li><a href="#about" className="page-link footer-link">About</a></li>
-              <li><a href="#join" className="page-link footer-link">Join</a></li>
+              <li><Link href="/blog" className="page-link footer-link">Blog</Link></li>
+              <li><Link href="/resources" className="page-link footer-link">Resources</Link></li>
+              <li><Link href="/explore" className="page-link footer-link">Explore</Link></li>
+              <li><Link href="/about" className="page-link footer-link">About</Link></li>
+              <li><Link href="/join" className="page-link footer-link">Join</Link></li>
             </ul>
           </div>
           <div>
             <h5 className="text-sm font-semibold text-[var(--text-primary-light)] mb-4">Community</h5>
             <ul className="space-y-2">
-              <li><a href="#join" className="page-link footer-link">Join Community</a></li>
+              <li><Link href="/join" className="page-link footer-link">Join Community</Link></li>
               <li><a href="#" className="footer-link">Newsletter</a></li>
               <li><a href="#" className="footer-link">FAQ</a></li>
             </ul>
@@ -36,18 +37,7 @@ export function Footer() {
               <li><a href="#" className="footer-link">Contact Us</a></li>
               <li><a href="#" className="footer-link">Support</a></li>
               <li>
-                <button 
-                  onClick={() => {
-                    const currentUrl = window.location.href;
-                    const adminUrl = currentUrl.includes('#') 
-                      ? currentUrl.split('#')[0] + '#admin'
-                      : currentUrl + '#admin';
-                    window.location.href = adminUrl;
-                  }}
-                  className="footer-link hover:underline text-left"
-                >
-                  Admin
-                </button>
+                <Link href="/admin" className="footer-link hover:underline text-left">Admin</Link>
               </li>
             </ul>
           </div>

@@ -6,7 +6,7 @@ export function AboutPage({ isActive }: AboutPageProps) {
   return (
     <section id="page-about" className={`page-section py-16 md:py-24 bg-[var(--bg-soft-light)] ${isActive ? 'active' : ''}`}>
       <div className="content-container max-w-4xl mx-auto">
-        <a href="#home" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Home</a>
+        <a href="/" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Home</a>
         <h1 className="page-title">About Materia</h1>
         <div className="prose dark:prose-invert max-w-none text-secondary text-base leading-relaxed">
           <h2 className="text-2xl font-semibold text-heading-light !mb-3 !mt-8">What is Materia?</h2>
