@@ -81,13 +81,17 @@ npm install
 # Run development server
 npm run dev
 
+# Run development server on port 5001
+npm run dev:5001
+
 # Build for production
 npm run build
 ```
 
 ## Deployment (Vercel)
 
-Deploy on Vercel and set these environment variables in the Vercel project settings:
+Deploy on Vercel and set these environment variables in the Vercel project settings.
+If deploying from the repository root, set Vercel `Root Directory` to `MateriaMSE`.
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
@@ -98,18 +102,29 @@ Deploy on Vercel and set these environment variables in the Vercel project setti
 
 ## Adding Pages/Routes
 
-This project uses a single-page layout with hash routing in `MainContent`.
-To add a new section:
+This project uses a Next.js App Router with dedicated routes.
+Current routes:
+
+- `/`
+- `/blog`
+- `/blog/[slug]`
+- `/about`
+- `/resources`
+- `/explore`
+- `/join`
+- `/admin`
+
+To add a new route:
 
 1. Create a new component in `components/pages/`.
-2. Export it from `components/pages/index.tsx`.
-3. Render it in `components/main-content.tsx` and map it to a hash.
+2. Create a route file in `app/<route>/page.tsx`.
+3. Render your component inside `SiteShell` to preserve the shared layout.
 
 ## Usage
 
 ### Admin Access
 
-Navigate to `/#admin` to access the admin dashboard. Here you can:
+Navigate to `/admin` to access the admin dashboard. Here you can:
 
 - Manage blog posts (publish/unpublish)
 - Review and approve community member applications

@@ -31,6 +31,14 @@ const nextConfig = {
       config.cache = false; // Disable caching in development to avoid issues
     }
 
+    // Silence optional ws native deps warnings from supabase realtime in browser builds
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      'bufferutil': false,
+      'utf-8-validate': false,
+    };
+
     return config;
   },
   // Ensure proper static generation
