@@ -4,20 +4,37 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
+const isValidSupabaseUrl = (value?: string) => {
+  if (!value || value === 'your_supabase_url_here') return false;
+  return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(value);
+};
+
+const isValidSupabasePublicKey = (value?: string) => {
+  if (!value || value === 'your_supabase_anon_key_here') return false;
+
+  // Legacy JWT anon keys usually begin with "eyJ"
+  if (value.startsWith('eyJ') && value.length > 30) return true;
+  // New Supabase publishable key format
+  if (value.startsWith('sb_publishable_') && value.length > 20) return true;
+
+  return false;
+};
+
 console.log('Supabase URL:', supabaseUrl);
 console.log('Supabase Key exists:', !!supabaseAnonKey);
 console.log('Environment check:', {
   url: supabaseUrl,
   keyLength: supabaseAnonKey?.length,
-  isValidUrl: supabaseUrl?.includes('supabase.co'),
-  isValidKey: supabaseAnonKey && supabaseAnonKey.length > 50
+  isValidUrl: isValidSupabaseUrl(supabaseUrl),
+  isValidKey: isValidSupabasePublicKey(supabaseAnonKey)
 });
 
+const validatedSupabaseUrl = isValidSupabaseUrl(supabaseUrl) ? supabaseUrl : undefined;
+const validatedSupabaseAnonKey = isValidSupabasePublicKey(supabaseAnonKey) ? supabaseAnonKey : undefined;
+
 // Only create client if we have valid credentials
-export const supabase = supabaseUrl && supabaseAnonKey && 
-  supabaseUrl !== 'your_supabase_url_here' && 
-  supabaseAnonKey !== 'your_supabase_anon_key_here'
-  ? createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = validatedSupabaseUrl && validatedSupabaseAnonKey
+  ? createClient(validatedSupabaseUrl, validatedSupabaseAnonKey, {
       auth: {
         persistSession: false // Disable auth for public access
       }
@@ -29,16 +46,16 @@ export const isSupabaseConfigured = () => {
   const isConfigured = supabase !== null && 
     supabaseUrl && 
     supabaseAnonKey &&
-    supabaseUrl.includes('supabase.co') &&
-    supabaseAnonKey.length > 50; // Basic validation
+    isValidSupabaseUrl(supabaseUrl) &&
+    isValidSupabasePublicKey(supabaseAnonKey);
   
   console.log('Supabase configured:', isConfigured);
   console.log('Configuration details:', {
     hasSupabaseClient: !!supabase,
     hasUrl: !!supabaseUrl,
     hasKey: !!supabaseAnonKey,
-    urlValid: supabaseUrl?.includes('supabase.co'),
-    keyValid: supabaseAnonKey && supabaseAnonKey.length > 50
+    urlValid: isValidSupabaseUrl(supabaseUrl),
+    keyValid: isValidSupabasePublicKey(supabaseAnonKey)
   });
   
   return isConfigured;

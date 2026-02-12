@@ -111,10 +111,10 @@ export function AdminPage({ isActive }: AdminPageProps) {
     }
 
     try {
-      // Test the connection by trying to fetch from a table
+      // Test the connection with a lightweight query on an expected table
       const result = await safeSupabaseOperation(
         async () => {
-          const { data, error } = await supabase!.from('blog_posts').select('count').limit(1);
+          const { error } = await supabase!.from('blog_posts').select('id').limit(1);
           if (error && error.code !== 'PGRST116') { // PGRST116 is "no rows found" which is fine
             throw error;
           }
