@@ -7,6 +7,7 @@ import { AdminPage } from './admin-page';
 import { ResourcesPage } from './resources-page';
 import { ExplorePage } from './explore-page';
 import { ProjectsPage } from './projects-page';
+import { MediaPage } from './media-page';
 
 export {
   HomePage,
@@ -17,5 +18,6 @@ export {
   AdminPage,
   ResourcesPage,
   ExplorePage,
-  ProjectsPage
+  ProjectsPage,
+  MediaPage
 };

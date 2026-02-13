@@ -242,7 +242,7 @@ export function HomePage({ isActive }: HomePageProps) {
       <div className="py-16 md:py-20 bg-[var(--bg-soft-light)]">
         <div className="content-container">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-heading-light)] mb-3">Projects on Display</h2>
-          <p className="text-secondary mb-8">Explore our student-led projects and media showcases. RP-EX 1 is featured now.</p>
+          <p className="text-secondary mb-8">Explore our student-led projects. RP-EX 1 is featured now.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link href="/projects#rp-ex-1" className="block bg-[var(--bg-light)] rounded-xl border border-[var(--border-light)] p-6 shadow-md hover:-translate-y-1 transition duration-300">
@@ -253,12 +253,12 @@ export function HomePage({ isActive }: HomePageProps) {
               <p className="text-secondary">Jump directly into the RP-EX 1 highlight and see where the project roadmap is headed.</p>
             </Link>
 
-            <Link href="/projects" className="block bg-[var(--bg-light)] rounded-xl border border-[var(--border-light)] p-6 shadow-md hover:-translate-y-1 transition duration-300">
+            <Link href="/media" className="block bg-[var(--bg-light)] rounded-xl border border-[var(--border-light)] p-6 shadow-md hover:-translate-y-1 transition duration-300">
               <span className="tag-chip border !bg-emerald-100 !text-emerald-700 !border-emerald-200 dark:!bg-emerald-900/60 dark:!text-emerald-300 dark:!border-emerald-800 mb-3">
                 Youth Voices in MSE
               </span>
               <h3 className="text-xl font-semibold text-[var(--text-heading-light)] mb-2">Watch the Series</h3>
-              <p className="text-secondary">Go to our projects/media page to view introduction and spotlight episodes from the YouTube channel.</p>
+              <p className="text-secondary">Go to the Media page to view introduction and spotlight episodes from the YouTube channel.</p>
             </Link>
           </div>
         </div>

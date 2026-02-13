@@ -20,6 +20,7 @@ export function Footer() {
               <li><Link href="/resources" className="page-link footer-link">Resources</Link></li>
               <li><Link href="/explore" className="page-link footer-link">Explore</Link></li>
               <li><Link href="/projects" className="page-link footer-link">Projects</Link></li>
+              <li><Link href="/media" className="page-link footer-link">Media</Link></li>
               <li><Link href="/about" className="page-link footer-link">About</Link></li>
               <li><Link href="/join" className="page-link footer-link">Join</Link></li>
             </ul>

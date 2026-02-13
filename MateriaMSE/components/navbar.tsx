@@ -39,7 +39,8 @@ export function NavBar() {
             <Link href="/blog" className={navLinkClass('/blog')}><i className="ti ti-message-circle"></i>Blog</Link>
             <Link href="/resources" className={navLinkClass('/resources')}><i className="ti ti-tools"></i>Resources</Link>
             <Link href="/explore" className={navLinkClass('/explore')}><i className="ti ti-compass"></i>Explore</Link>
-            <Link href="/projects" className={navLinkClass('/projects')}><i className="ti ti-brand-youtube"></i>Projects</Link>
+            <Link href="/projects" className={navLinkClass('/projects')}><i className="ti ti-flask"></i>Projects</Link>
+            <Link href="/media" className={navLinkClass('/media')}><i className="ti ti-brand-youtube"></i>Media</Link>
             <Link href="/about" className={navLinkClass('/about')}><i className="ti ti-info-circle"></i>About</Link>
             <Link href="/join" className={navLinkClass('/join')}><i className="ti ti-users-group"></i>Join</Link>
           </div>
@@ -82,7 +83,8 @@ export function NavBar() {
           <Link href="/blog" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-message-circle"></i>Blog</Link>
           <Link href="/resources" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-tools"></i>Resources</Link>
           <Link href="/explore" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-compass"></i>Explore</Link>
-          <Link href="/projects" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-brand-youtube"></i>Projects</Link>
+          <Link href="/projects" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-flask"></i>Projects</Link>
+          <Link href="/media" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-brand-youtube"></i>Media</Link>
           <Link href="/about" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-info-circle"></i>About</Link>
           <Link href="/join" className="mobile-nav-link page-link" onClick={closeMobileMenu}><i className="ti ti-users-group"></i>Join</Link>
           <div className="mt-6 pt-5 border-t border-[var(--border-light)] dark:border-[var(--border-dark)]">

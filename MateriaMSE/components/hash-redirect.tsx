@@ -10,6 +10,7 @@ const HASH_TO_ROUTE: Record<string, string> = {
   resources: '/resources',
   explore: '/explore',
   projects: '/projects',
+  media: '/media',
   join: '/join',
   admin: '/admin',
 };
