@@ -63,6 +63,34 @@ export function AboutPage({ isActive }: AboutPageProps) {
                 <li className="rounded-lg border border-[var(--border-light)] p-4 bg-[var(--bg-soft-light)]">
                   <span className="font-semibold text-[var(--text-heading-light)]">Founder + CEO:</span> Nikhilesh
                   Suravarjjala
+                  <div className="mt-4 space-y-4 text-sm md:text-base leading-relaxed text-secondary">
+                    <p>
+                      Hey! My name is Nikhilesh Suravarjjala, and I built Materia MSE because materials science feels
+                      both underrated and gatekept. MSE quietly powers aerospace, energy, medicine, semiconductors,
+                      and manufacturing; yet most people never see how central it actually is. When I started digging
+                      deeper, I realized the field was not small; it was just siloed. Materials science does not live
+                      in isolation; it collides with history, statistics, economics, design, sustainability, and now
+                      artificial intelligence. If you zoom out, it becomes one of the most opportunity-rich disciplines
+                      of the next decade. That realization is what pushed me to build something public.
+                    </p>
+                    <p>
+                      Materia is not about publishing papers; it is about making them understandable and usable. It is
+                      about breaking down complex research, connecting ideas across fields, and showing how materials
+                      decisions shape real systems. In an AI-driven world where data, modeling, and simulation are
+                      accelerating discovery, the people who understand materials will shape industries. I want Materia
+                      to help students see that; not as a niche academic path, but as a launchpad. There is room for
+                      builders, analysts, storytellers, coders, and researchers here. The field is still growing; the
+                      surface has barely been scratched :)
+                    </p>
+                    <p>
+                      For me, Materia is also where I can host my projects, test ideas, and build in public. It is a
+                      place for feedback; a place to refine research questions; a place to connect with people who
+                      think deeply about materials. I want it to grow into a platform where interdisciplinary thinking
+                      is normal; where projects, analysis, and experimentation live side by side. I am not building
+                      Materia because I have all the answers; I am building it because I believe the future of
+                      materials science should be open, collaborative, and, most importantly, bold.
+                    </p>
+                  </div>
                 </li>
                 <li className="rounded-lg border border-[var(--border-light)] p-4 bg-[var(--bg-soft-light)]">
                   <span className="font-semibold text-[var(--text-heading-light)]">East Coast Lead + CTO:</span>{' '}
