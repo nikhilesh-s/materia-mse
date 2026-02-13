@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import { supabase, isSupabaseConfigured, safeSupabaseOperation } from '@/lib/supabase';
+import { getTagChipTone, normalizeBlogTags } from '@/lib/blog-tags';
 import Image from 'next/image';
 
 interface BlogPost {
@@ -9,10 +11,11 @@ interface BlogPost {
   title: string;
   content: string;
   featured_image: string | null;
-  category: string;
   author: string;
   created_at: string;
   slug: string;
+  tags?: string[];
+  category?: string;
 }
 
 interface Comment {
@@ -35,25 +38,26 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
   const [commentForm, setCommentForm] = useState({
     author_name: '',
     author_email: '',
-    content: ''
+    content: '',
   });
   const [submittingComment, setSubmittingComment] = useState(false);
 
   const fetchPost = useCallback(async () => {
     try {
       if (!isSupabaseConfigured()) {
-        // Mock data for when Supabase is not available
         const mockPosts: { [key: string]: BlogPost } = {
           'why-materials-matter-more-than-you-think': {
             id: '1',
             title: 'Why Materials Matter More Than You Think',
-            content: '<p>Materials science is everywhere around us, from the smartphone in your pocket to the buildings we live in. Understanding materials helps us innovate and solve real-world problems.</p><p>In this post, we\'ll explore how different materials shape our daily lives and why studying them is crucial for future innovations.</p><h2>The Building Blocks of Innovation</h2><p>Every technological advancement relies on materials. Whether it\'s developing stronger, lighter composites for aerospace or creating biodegradable plastics for environmental sustainability, materials science is at the heart of progress.</p>',
+            content:
+              '<p>Materials science is everywhere around us, from the smartphone in your pocket to the buildings we live in. Understanding materials helps us innovate and solve real-world problems.</p><p>In this post, we\'ll explore how different materials shape our daily lives and why studying them is crucial for future innovations.</p><h2>The Building Blocks of Innovation</h2><p>Every technological advancement relies on materials. Whether it\'s developing stronger, lighter composites for aerospace or creating biodegradable plastics for environmental sustainability, materials science is at the heart of progress.</p>',
             featured_image: 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg',
-            category: 'Basics',
             author: 'Nikhilesh Suravarjjala',
             created_at: new Date().toISOString(),
-            slug: 'why-materials-matter-more-than-you-think'
-          }
+            slug: 'why-materials-matter-more-than-you-think',
+            tags: ['Basics', 'Education'],
+            category: 'Basics',
+          },
         };
         setPost(mockPosts[postSlug] || null);
         setLoading(false);
@@ -68,14 +72,14 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
             .eq('slug', postSlug)
             .eq('published', true)
             .single()
-            .then(res => res);
+            .then((res) => res);
           if (error) throw error;
           return data;
         },
         null
       );
 
-      setPost(result);
+      setPost(result ? { ...result, tags: normalizeBlogTags(result) } : null);
     } catch (error) {
       console.error('Error fetching post:', error);
       setPost(null);
@@ -99,7 +103,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
             .eq('post_id', postSlug)
             .eq('approved', true)
             .order('created_at', { ascending: true })
-            .then(res => res);
+            .then((res) => res);
           if (error) throw error;
           return data || [];
         },
@@ -122,7 +126,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
 
   const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!isSupabaseConfigured()) {
       alert('Comments are not available at the moment.');
       return;
@@ -140,9 +144,9 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
               author_name: commentForm.author_name,
               author_email: commentForm.author_email,
               content: commentForm.content,
-              approved: false // Comments need approval
+              approved: false,
             })
-            .then(res => res);
+            .then((res) => res);
           if (error) throw error;
           return true;
         },
@@ -180,7 +184,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
     return (
       <section id="page-blog-post" className="page-section active py-16 md:py-24 bg-[var(--bg-soft-light)]">
         <div className="content-container max-w-4xl mx-auto">
-          <a href="/blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</a>
+          <Link href="/blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</Link>
           <div className="placeholder-content">
             <h1 className="text-2xl md:text-3xl font-bold mb-4">Post Not Found</h1>
             <p className="text-secondary">The requested blog post could not be found.</p>
@@ -190,16 +194,18 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
     );
   }
 
+  const tags = normalizeBlogTags(post);
+
   return (
     <section id="page-blog-post" className="page-section active py-16 md:py-24 bg-[var(--bg-soft-light)]">
       <div className="content-container max-w-4xl mx-auto">
-        <a href="/blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</a>
-        
+        <Link href="/blog" className="page-link back-link"><i className="ti ti-arrow-left"></i> Back to Blog</Link>
+
         <article className="bg-[var(--bg-light)] rounded-lg shadow-lg overflow-hidden mb-12">
           {post.featured_image && (
             <div className="relative w-full h-64 md:h-80">
-              <Image 
-                src={post.featured_image} 
+              <Image
+                src={post.featured_image}
                 alt={post.title}
                 fill
                 className="object-cover"
@@ -207,38 +213,31 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
               />
             </div>
           )}
-          
+
           <div className="p-8">
-            <div className="mb-4">
-              <span className="category-tag !bg-emerald-100 !dark:bg-emerald-900/60 !text-emerald-700 !dark:text-emerald-300">
-                {post.category}
-              </span>
+            <div className="mb-4 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span key={tag} className={`tag-chip border ${getTagChipTone(tag)}`}>
+                  {tag}
+                </span>
+              ))}
             </div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--text-heading-light)]">
-              {post.title}
-            </h1>
-            
+
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--text-heading-light)]">{post.title}</h1>
+
             <div className="flex items-center text-sm text-secondary mb-8">
               <span>By {post.author}</span>
               <span className="mx-2">•</span>
               <span>{new Date(post.created_at).toLocaleDateString()}</span>
             </div>
-            
-            <div 
-              className="prose dark:prose-invert max-w-none text-secondary"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+
+            <div className="prose dark:prose-invert max-w-none text-secondary" dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </article>
 
-        {/* Comments Section */}
         <div className="bg-[var(--bg-light)] rounded-lg shadow-lg p-8">
-          <h3 className="text-2xl font-bold mb-6 text-[var(--text-heading-light)]">
-            Comments ({comments.length})
-          </h3>
+          <h3 className="text-2xl font-bold mb-6 text-[var(--text-heading-light)]">Comments ({comments.length})</h3>
 
-          {/* Comment Form */}
           {isSupabaseConfigured() && (
             <form onSubmit={handleCommentSubmit} className="mb-8 p-6 bg-[var(--bg-soft-light)] rounded-lg">
               <h4 className="text-lg font-semibold mb-4">Leave a Comment</h4>
@@ -251,7 +250,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
                     required
                     className="form-input"
                     value={commentForm.author_name}
-                    onChange={(e) => setCommentForm({...commentForm, author_name: e.target.value})}
+                    onChange={(e) => setCommentForm({ ...commentForm, author_name: e.target.value })}
                   />
                 </div>
                 <div>
@@ -262,7 +261,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
                     required
                     className="form-input"
                     value={commentForm.author_email}
-                    onChange={(e) => setCommentForm({...commentForm, author_email: e.target.value})}
+                    onChange={(e) => setCommentForm({ ...commentForm, author_email: e.target.value })}
                   />
                 </div>
               </div>
@@ -274,7 +273,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
                   rows={4}
                   className="form-textarea"
                   value={commentForm.content}
-                  onChange={(e) => setCommentForm({...commentForm, content: e.target.value})}
+                  onChange={(e) => setCommentForm({ ...commentForm, content: e.target.value })}
                 />
               </div>
               <button
@@ -287,7 +286,6 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
             </form>
           )}
 
-          {/* Comments List */}
           <div className="space-y-6">
             {comments.length === 0 ? (
               <p className="text-secondary text-center py-8">No comments yet. Be the first to comment!</p>
@@ -297,9 +295,7 @@ export function BlogPostPage({ isActive, postSlug }: BlogPostPageProps) {
                   <div className="flex items-center mb-2">
                     <h5 className="font-semibold text-[var(--text-heading-light)]">{comment.author_name}</h5>
                     <span className="mx-2 text-secondary">•</span>
-                    <span className="text-sm text-secondary">
-                      {new Date(comment.created_at).toLocaleDateString()}
-                    </span>
+                    <span className="text-sm text-secondary">{new Date(comment.created_at).toLocaleDateString()}</span>
                   </div>
                   <p className="text-secondary">{comment.content}</p>
                 </div>

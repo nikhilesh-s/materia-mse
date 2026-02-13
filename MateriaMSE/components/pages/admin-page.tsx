@@ -3,12 +3,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase, isSupabaseConfigured, safeSupabaseOperation } from '@/lib/supabase';
 import { SimpleBlogEditor } from '@/components/simple-blog-editor';
+import { normalizeBlogTags, parseTagsInput } from '@/lib/blog-tags';
 
 interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
-  category: string;
+  category?: string;
+  tags?: string[];
   author: string;
   published: boolean;
   created_at: string;
@@ -38,6 +40,9 @@ interface AdminPageProps {
 }
 
 export function AdminPage({ isActive }: AdminPageProps) {
+  const DEFAULT_AUTHOR = 'Nikhilesh Suravarjjala';
+  const DEFAULT_TAGS_TEXT = 'Basics';
+
   const [activeTab, setActiveTab] = useState('posts');
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [members, setMembers] = useState<CommunityMember[]>([]);
@@ -55,8 +60,8 @@ export function AdminPage({ isActive }: AdminPageProps) {
     content: '',
     excerpt: '',
     featured_image: '',
-    category: 'Basics',
-    author: 'Nikhilesh Suravarjjala',
+    tagsText: DEFAULT_TAGS_TEXT,
+    author: DEFAULT_AUTHOR,
     slug: ''
   });
   const [savingPost, setSavingPost] = useState(false);
@@ -191,9 +196,17 @@ export function AdminPage({ isActive }: AdminPageProps) {
 
     try {
       const slug = newPost.slug || generateSlug(newPost.title);
+      const tags = parseTagsInput(newPost.tagsText);
+      const normalizedTags = tags.length > 0 ? tags : ['Basics'];
       
       const postData = {
-        ...newPost,
+        title: newPost.title,
+        content: newPost.content,
+        excerpt: newPost.excerpt,
+        featured_image: newPost.featured_image,
+        author: newPost.author.trim() || DEFAULT_AUTHOR,
+        tags: normalizedTags,
+        category: normalizedTags[0],
         slug,
         published: false // Always create as draft initially
       };
@@ -216,8 +229,8 @@ export function AdminPage({ isActive }: AdminPageProps) {
           content: '',
           excerpt: '',
           featured_image: '',
-          category: 'Basics',
-          author: 'Nikhilesh Suravarjjala',
+          tagsText: DEFAULT_TAGS_TEXT,
+          author: DEFAULT_AUTHOR,
           slug: ''
         });
         setShowCreatePost(false);
@@ -240,8 +253,8 @@ export function AdminPage({ isActive }: AdminPageProps) {
       content: post.content || '',
       excerpt: post.excerpt,
       featured_image: post.featured_image || '',
-      category: post.category,
-      author: post.author,
+      tagsText: normalizeBlogTags(post).join(', '),
+      author: post.author || DEFAULT_AUTHOR,
       slug: post.slug
     });
   };
@@ -258,9 +271,17 @@ export function AdminPage({ isActive }: AdminPageProps) {
 
     try {
       const slug = newPost.slug || generateSlug(newPost.title);
+      const tags = parseTagsInput(newPost.tagsText);
+      const normalizedTags = tags.length > 0 ? tags : ['Basics'];
       
       const postData = {
-        ...newPost,
+        title: newPost.title,
+        content: newPost.content,
+        excerpt: newPost.excerpt,
+        featured_image: newPost.featured_image,
+        author: newPost.author.trim() || DEFAULT_AUTHOR,
+        tags: normalizedTags,
+        category: normalizedTags[0],
         slug,
         updated_at: new Date().toISOString()
       };
@@ -284,8 +305,8 @@ export function AdminPage({ isActive }: AdminPageProps) {
           content: '',
           excerpt: '',
           featured_image: '',
-          category: 'Basics',
-          author: 'Nikhilesh Suravarjjala',
+          tagsText: DEFAULT_TAGS_TEXT,
+          author: DEFAULT_AUTHOR,
           slug: ''
         });
         setEditingPost(null);
@@ -308,8 +329,8 @@ export function AdminPage({ isActive }: AdminPageProps) {
       content: '',
       excerpt: '',
       featured_image: '',
-      category: 'Basics',
-      author: 'Nikhilesh Suravarjjala',
+      tagsText: DEFAULT_TAGS_TEXT,
+      author: DEFAULT_AUTHOR,
       slug: ''
     });
   };
@@ -692,8 +713,8 @@ export function AdminPage({ isActive }: AdminPageProps) {
                         content: '',
                         excerpt: '',
                         featured_image: '',
-                        category: 'Basics',
-                        author: 'Nikhilesh Suravarjjala',
+                        tagsText: DEFAULT_TAGS_TEXT,
+                        author: DEFAULT_AUTHOR,
                         slug: ''
                       });
                     }}
@@ -735,22 +756,25 @@ export function AdminPage({ isActive }: AdminPageProps) {
                           />
                         </div>
                         <div>
-                          <label className="form-label">Category</label>
-                          <select
-                            className="form-select"
-                            value={newPost.category}
-                            onChange={(e) => setNewPost({...newPost, category: e.target.value})}
-                          >
-                            <option value="Basics">Basics</option>
-                            <option value="Polymers">Polymers</option>
-                            <option value="Metals">Metals</option>
-                            <option value="Ceramics">Ceramics</option>
-                            <option value="Composites">Composites</option>
-                            <option value="Research">Research</option>
-                            <option value="Sustainability">Sustainability</option>
-                            <option value="Education">Education</option>
-                          </select>
+                          <label className="form-label">Tags *</label>
+                          <input
+                            type="text"
+                            required
+                            className="form-input"
+                            value={newPost.tagsText}
+                            onChange={(e) => setNewPost({...newPost, tagsText: e.target.value})}
+                            placeholder="Basics, Metals, Sustainability"
+                          />
+                          <p className="text-xs text-secondary mt-2">Use comma-separated tags. The first tag is stored as primary category for compatibility.</p>
                         </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {parseTagsInput(newPost.tagsText).map((tag) => (
+                          <span key={tag} className="tag-chip border bg-[var(--bg-soft-light)] border-[var(--border-light)] text-[var(--text-primary-light)]">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                       
                       <div>
@@ -845,7 +869,7 @@ export function AdminPage({ isActive }: AdminPageProps) {
                     <thead className="bg-[var(--bg-soft-light)]">
                       <tr>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-light)] uppercase tracking-wider">Title</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-light)] uppercase tracking-wider">Category</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-light)] uppercase tracking-wider">Tags</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-light)] uppercase tracking-wider">Status</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-light)] uppercase tracking-wider">Created</th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-[var(--text-secondary-light)] uppercase tracking-wider">Actions</th>
@@ -858,7 +882,15 @@ export function AdminPage({ isActive }: AdminPageProps) {
                             <div className="text-sm font-medium text-[var(--text-heading-light)]">{post.title}</div>
                             <div className="text-sm text-[var(--text-secondary-light)]">{post.excerpt.substring(0, 100)}...</div>
                           </td>
-                          <td className="px-6 py-4 text-sm text-[var(--text-secondary-light)]">{post.category}</td>
+                          <td className="px-6 py-4 text-sm text-[var(--text-secondary-light)]">
+                            <div className="flex flex-wrap gap-2">
+                              {normalizeBlogTags(post).slice(0, 3).map((tag) => (
+                                <span key={`${post.id}-${tag}`} className="tag-chip border bg-[var(--bg-soft-light)] border-[var(--border-light)] text-[var(--text-primary-light)]">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </td>
                           <td className="px-6 py-4">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                               post.published 

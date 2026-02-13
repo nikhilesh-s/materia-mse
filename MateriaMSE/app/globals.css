@@ -615,6 +615,16 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 9999px; 
 }
 
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 /* Footer */
 .footer-link { 
   font-size: 0.875rem; 

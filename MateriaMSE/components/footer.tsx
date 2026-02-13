@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-2 pr-8">
             <Link href="/" className="page-link inline-flex items-center space-x-2.5 mb-4">
               <MoleculeDiamondIcon className="h-7 w-auto text-[var(--accent-primary)]" />
-              <span className="text-lg font-semibold text-[var(--text-heading-light)]">Materia</span>
+              <span className="text-lg font-semibold text-[var(--text-heading-light)]">Materia MSE</span>
             </Link>
             <p className="text-sm leading-relaxed">Exploring the fundamental building blocks that shape our world. Making materials science accessible, engaging, and inspiring.</p>
           </div>
@@ -19,6 +19,7 @@ export function Footer() {
               <li><Link href="/blog" className="page-link footer-link">Blog</Link></li>
               <li><Link href="/resources" className="page-link footer-link">Resources</Link></li>
               <li><Link href="/explore" className="page-link footer-link">Explore</Link></li>
+              <li><Link href="/projects" className="page-link footer-link">Projects</Link></li>
               <li><Link href="/about" className="page-link footer-link">About</Link></li>
               <li><Link href="/join" className="page-link footer-link">Join</Link></li>
             </ul>

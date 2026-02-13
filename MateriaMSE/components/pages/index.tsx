@@ -6,6 +6,7 @@ import { BlogPostPage } from './blog-post-page';
 import { AdminPage } from './admin-page';
 import { ResourcesPage } from './resources-page';
 import { ExplorePage } from './explore-page';
+import { ProjectsPage } from './projects-page';
 
 export {
   HomePage,
@@ -15,5 +16,6 @@ export {
   BlogPostPage,
   AdminPage,
   ResourcesPage,
-  ExplorePage
+  ExplorePage,
+  ProjectsPage
 };

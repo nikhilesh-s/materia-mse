@@ -101,6 +101,7 @@ export type Database = {
           excerpt: string;
           featured_image: string | null;
           category: string;
+          tags: string[];
           author: string;
           published: boolean;
           created_at: string;
@@ -114,6 +115,7 @@ export type Database = {
           excerpt: string;
           featured_image?: string | null;
           category: string;
+          tags?: string[];
           author: string;
           published?: boolean;
           created_at?: string;
@@ -127,6 +129,7 @@ export type Database = {
           excerpt?: string;
           featured_image?: string | null;
           category?: string;
+          tags?: string[];
           author?: string;
           published?: boolean;
           created_at?: string;
