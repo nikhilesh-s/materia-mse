@@ -37,35 +37,6 @@ export function ResourcesPage({ isActive }: ResourcesPageProps) {
           <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-heading-light)] mb-3">Resources</h1>
           <p className="text-lg text-secondary">Tools to Start Your Own Materials Science Projects</p>
         </div>
-        
-        {/* DIY Labs Section */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-[var(--text-heading-light)]">DIY Labs</h2>
-          <p className="text-lg text-secondary text-center max-w-4xl mx-auto mb-12">
-            Want to experiment with materials science at home? Here are some safe, beginner-friendly projects that use everyday items to help you connect MSE concepts to real life.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {diyLabs.map((lab, index) => (
-              <div key={index} className={`explore-card group animate-slide-in-up delay-${(index + 1) * 100}`}>
-                <div className="icon-wrapper bg-[var(--gradient-primary)] mb-4">
-                  <i className={`${lab.icon} text-white text-xl`}></i>
-                </div>
-                <h3 className="card-title text-[var(--text-heading-light)]">{lab.title}</h3>
-                <p className="card-description text-secondary mb-6">{lab.description}</p>
-                <a 
-                  href={lab.pdfUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-4 py-2.5 rounded-lg shadow-md text-sm transition duration-300 transform hover:-translate-y-1"
-                >
-                  <i className="ti ti-download mr-2"></i>
-                  Download PDF Guide
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Project Planning Templates Section */}
         <div className="mb-16">
@@ -110,6 +81,35 @@ export function ResourcesPage({ isActive }: ResourcesPageProps) {
                 Download the Materia Project Proposal Template <i className="ti ti-arrow-right ml-2"></i>
               </a>
             </article>
+          </div>
+        </div>
+        
+        {/* DIY Labs Section */}
+        <div className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-[var(--text-heading-light)]">DIY Labs</h2>
+          <p className="text-lg text-secondary text-center max-w-4xl mx-auto mb-12">
+            Want to experiment with materials science at home? Here are some safe, beginner-friendly projects that use everyday items to help you connect MSE concepts to real life.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {diyLabs.map((lab, index) => (
+              <div key={index} className={`explore-card group animate-slide-in-up delay-${(index + 1) * 100}`}>
+                <div className="icon-wrapper bg-[var(--gradient-primary)] mb-4">
+                  <i className={`${lab.icon} text-white text-xl`}></i>
+                </div>
+                <h3 className="card-title text-[var(--text-heading-light)]">{lab.title}</h3>
+                <p className="card-description text-secondary mb-6">{lab.description}</p>
+                <a 
+                  href={lab.pdfUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-4 py-2.5 rounded-lg shadow-md text-sm transition duration-300 transform hover:-translate-y-1"
+                >
+                  <i className="ti ti-download mr-2"></i>
+                  Download PDF Guide
+                </a>
+              </div>
+            ))}
           </div>
         </div>
 
