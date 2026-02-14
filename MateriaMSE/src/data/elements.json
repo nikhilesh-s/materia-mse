@@ -1,0 +1,200 @@
+[
+  {
+    "symbol": "H",
+    "name": "Hydrogen",
+    "atomicNumber": 1,
+    "category": "nonmetal",
+    "density": "0.00008988 g/cm^3",
+    "meltingPoint": "-259.16 C",
+    "applications": ["Fuel cells for clean energy systems", "Reducing atmosphere in metallurgy", "Cryogenic cooling"],
+    "group": 1,
+    "period": 1
+  },
+  {
+    "symbol": "He",
+    "name": "Helium",
+    "atomicNumber": 2,
+    "category": "nonmetal",
+    "density": "0.0001785 g/cm^3",
+    "meltingPoint": "No solidification at 1 atm",
+    "applications": ["Leak detection in high-reliability systems", "Inert shielding gas", "Cryogenics for superconducting magnets"],
+    "group": 18,
+    "period": 1
+  },
+  {
+    "symbol": "C",
+    "name": "Carbon",
+    "atomicNumber": 6,
+    "category": "nonmetal",
+    "density": "2.267 g/cm^3 (graphite)",
+    "meltingPoint": "Sublimes around 3642 C",
+    "applications": ["Carbon fiber composites", "Electrodes and battery materials", "High-temperature refractories"],
+    "group": 14,
+    "period": 2
+  },
+  {
+    "symbol": "O",
+    "name": "Oxygen",
+    "atomicNumber": 8,
+    "category": "nonmetal",
+    "density": "0.001429 g/cm^3",
+    "meltingPoint": "-218.79 C",
+    "applications": ["Steelmaking oxidation control", "Medical oxygen systems", "Rocket oxidizer"],
+    "group": 16,
+    "period": 2
+  },
+  {
+    "symbol": "Na",
+    "name": "Sodium",
+    "atomicNumber": 11,
+    "category": "metal",
+    "density": "0.968 g/cm^3",
+    "meltingPoint": "97.72 C",
+    "applications": ["Heat transfer fluids", "Chemical feedstock production", "Sodium-ion battery research"],
+    "group": 1,
+    "period": 3
+  },
+  {
+    "symbol": "Mg",
+    "name": "Magnesium",
+    "atomicNumber": 12,
+    "category": "metal",
+    "density": "1.738 g/cm^3",
+    "meltingPoint": "650 C",
+    "applications": ["Lightweight automotive alloys", "Aerospace structural parts", "Sacrificial anodes for corrosion protection"],
+    "group": 2,
+    "period": 3
+  },
+  {
+    "symbol": "Al",
+    "name": "Aluminum",
+    "atomicNumber": 13,
+    "category": "metal",
+    "density": "2.70 g/cm^3",
+    "meltingPoint": "660.32 C",
+    "applications": ["Aircraft skins and frames", "Heat exchangers", "Electrical conductors"],
+    "group": 13,
+    "period": 3
+  },
+  {
+    "symbol": "Si",
+    "name": "Silicon",
+    "atomicNumber": 14,
+    "category": "metalloid",
+    "density": "2.329 g/cm^3",
+    "meltingPoint": "1414 C",
+    "applications": ["Semiconductor wafers", "Solar photovoltaic cells", "High-temperature ceramics"],
+    "group": 14,
+    "period": 3
+  },
+  {
+    "symbol": "Ti",
+    "name": "Titanium",
+    "atomicNumber": 22,
+    "category": "metal",
+    "density": "4.506 g/cm^3",
+    "meltingPoint": "1668 C",
+    "applications": ["Jet engine components", "Biomedical implants", "Corrosion-resistant process equipment"],
+    "group": 4,
+    "period": 4
+  },
+  {
+    "symbol": "Cr",
+    "name": "Chromium",
+    "atomicNumber": 24,
+    "category": "metal",
+    "density": "7.19 g/cm^3",
+    "meltingPoint": "1907 C",
+    "applications": ["Stainless steel alloying", "Hard coatings", "High-temperature oxidation resistance"],
+    "group": 6,
+    "period": 4
+  },
+  {
+    "symbol": "Fe",
+    "name": "Iron",
+    "atomicNumber": 26,
+    "category": "metal",
+    "density": "7.874 g/cm^3",
+    "meltingPoint": "1538 C",
+    "applications": ["Structural steels", "Machine components", "Magnetic cores"],
+    "group": 8,
+    "period": 4
+  },
+  {
+    "symbol": "Ni",
+    "name": "Nickel",
+    "atomicNumber": 28,
+    "category": "metal",
+    "density": "8.908 g/cm^3",
+    "meltingPoint": "1455 C",
+    "applications": ["Superalloys for turbines", "Battery cathode chemistries", "Corrosion-resistant plating"],
+    "group": 10,
+    "period": 4
+  },
+  {
+    "symbol": "Cu",
+    "name": "Copper",
+    "atomicNumber": 29,
+    "category": "metal",
+    "density": "8.96 g/cm^3",
+    "meltingPoint": "1084.62 C",
+    "applications": ["Electrical wiring", "Heat sinks", "Motor windings"],
+    "group": 11,
+    "period": 4
+  },
+  {
+    "symbol": "Zn",
+    "name": "Zinc",
+    "atomicNumber": 30,
+    "category": "metal",
+    "density": "7.14 g/cm^3",
+    "meltingPoint": "419.53 C",
+    "applications": ["Galvanized steel coatings", "Die casting alloys", "Sacrificial corrosion protection"],
+    "group": 12,
+    "period": 4
+  },
+  {
+    "symbol": "Ag",
+    "name": "Silver",
+    "atomicNumber": 47,
+    "category": "metal",
+    "density": "10.49 g/cm^3",
+    "meltingPoint": "961.78 C",
+    "applications": ["High-conductivity contacts", "Solder and brazing alloys", "Photovoltaic metallization"],
+    "group": 11,
+    "period": 5
+  },
+  {
+    "symbol": "Sn",
+    "name": "Tin",
+    "atomicNumber": 50,
+    "category": "metal",
+    "density": "7.31 g/cm^3",
+    "meltingPoint": "231.93 C",
+    "applications": ["Lead-free solder", "Corrosion-resistant coatings", "Bearing alloys"],
+    "group": 14,
+    "period": 5
+  },
+  {
+    "symbol": "W",
+    "name": "Tungsten",
+    "atomicNumber": 74,
+    "category": "metal",
+    "density": "19.25 g/cm^3",
+    "meltingPoint": "3422 C",
+    "applications": ["High-temperature tooling", "Aerospace thermal shielding", "Electrical contacts"],
+    "group": 6,
+    "period": 6
+  },
+  {
+    "symbol": "Au",
+    "name": "Gold",
+    "atomicNumber": 79,
+    "category": "metal",
+    "density": "19.32 g/cm^3",
+    "meltingPoint": "1064.18 C",
+    "applications": ["Corrosion-proof electrical contacts", "Microelectronic bonding", "High-reliability connectors"],
+    "group": 11,
+    "period": 6
+  }
+]

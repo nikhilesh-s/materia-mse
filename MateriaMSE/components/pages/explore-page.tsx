@@ -3,12 +3,57 @@ interface ExplorePageProps {
 }
 
 export function ExplorePage({ isActive }: ExplorePageProps) {
+  const exploreTools = [
+    {
+      title: 'Material Explorer',
+      description: 'Compare material classes and inspect practical performance properties in one interface.',
+      href: 'https://materia-explorer-tool.vercel.app',
+      icon: 'ti-atom-2',
+      openInNewTab: true,
+    },
+    {
+      title: 'Interactive Periodic Table',
+      description: 'Inspect core element properties and engineering applications with category filters.',
+      href: '/tools/periodic-table',
+      icon: 'ti-table',
+      openInNewTab: true,
+    },
+    {
+      title: 'Car Parts Materials Map',
+      description: 'Click vehicle zones to understand real material choices, constraints, and innovation paths.',
+      href: '/tools/car-materials',
+      icon: 'ti-car',
+      openInNewTab: true,
+    },
+  ];
+
   return (
     <section id="page-explore" className={`page-section py-16 md:py-24 bg-[var(--bg-soft-light)] ${isActive ? 'active' : ''}`}>
       <div className="content-container">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-heading-light)] mb-3">Explore</h1>
           <p className="text-lg text-secondary">What's Coming Up from Materia</p>
+        </div>
+
+        <div className="mb-14">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-[var(--text-heading-light)]">Explore Tools</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {exploreTools.map((tool) => (
+              <a
+                key={tool.title}
+                href={tool.href}
+                target={tool.openInNewTab ? '_blank' : undefined}
+                rel={tool.openInNewTab ? 'noopener noreferrer' : undefined}
+                className="group rounded-xl border border-[var(--border-light)] bg-[var(--bg-light)] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[var(--accent-primary)]"
+              >
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-[var(--bg-accent-light)] text-[var(--accent-primary)] mb-4">
+                  <i className={`ti ${tool.icon} text-xl`} />
+                </div>
+                <h3 className="text-lg font-semibold text-[var(--text-heading-light)] mb-2">{tool.title}</h3>
+                <p className="text-sm text-secondary leading-relaxed">{tool.description}</p>
+              </a>
+            ))}
+          </div>
         </div>
         
         {/* Materials Explorer Section */}

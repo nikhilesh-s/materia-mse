@@ -1,0 +1,116 @@
+{
+  "standard": {
+    "chassis": {
+      "primaryMaterial": "High-strength low-alloy steel",
+      "whyChosen": "Balances crash safety, manufacturability, and cost for high-volume production.",
+      "tradeoff": "Heavier than aluminum-focused body structures.",
+      "futureInnovation": "Hybrid steel-aluminum multi-material frames with topology-optimized joints."
+    },
+    "brake_disc": {
+      "primaryMaterial": "Gray cast iron",
+      "whyChosen": "Excellent thermal capacity and damping under repeated braking cycles.",
+      "tradeoff": "Higher unsprung mass and corrosion susceptibility.",
+      "futureInnovation": "Coated lightweight rotors and metal-matrix composite discs."
+    },
+    "engine_block": {
+      "primaryMaterial": "Cast aluminum alloy",
+      "whyChosen": "Reduces mass while maintaining adequate thermal conductivity and machinability.",
+      "tradeoff": "Lower high-temperature strength than cast iron in extreme duty cycles.",
+      "futureInnovation": "Additively enhanced cooling channels and reinforced Al-Si alloys."
+    },
+    "hood": {
+      "primaryMaterial": "Stamped aluminum sheet",
+      "whyChosen": "Lightweight panel improves fuel economy and handling response.",
+      "tradeoff": "Higher repair cost than mild steel after localized dents.",
+      "futureInnovation": "Recyclable thermoplastic composite outer panels."
+    },
+    "windows": {
+      "primaryMaterial": "Tempered and laminated soda-lime glass",
+      "whyChosen": "Delivers visibility, scratch resistance, and safety fragmentation behavior.",
+      "tradeoff": "Adds weight compared with advanced polymer glazing systems.",
+      "futureInnovation": "Hard-coated lightweight glazing with integrated smart tinting."
+    },
+    "tires": {
+      "primaryMaterial": "Natural/synthetic rubber with carbon black",
+      "whyChosen": "Provides traction, fatigue resistance, and broad temperature operability.",
+      "tradeoff": "Rolling resistance and wear particle generation.",
+      "futureInnovation": "Low-emission tread compounds and advanced silica-filler systems."
+    }
+  },
+  "sports": {
+    "chassis": {
+      "primaryMaterial": "Aluminum spaceframe with localized carbon fiber reinforcement",
+      "whyChosen": "High stiffness-to-weight ratio improves dynamics and acceleration.",
+      "tradeoff": "Higher manufacturing complexity and repair specialization.",
+      "futureInnovation": "Out-of-autoclave carbon composites with improved recyclability."
+    },
+    "brake_disc": {
+      "primaryMaterial": "Carbon-ceramic composite",
+      "whyChosen": "Exceptional fade resistance and thermal stability at extreme braking loads.",
+      "tradeoff": "Very high component and replacement cost.",
+      "futureInnovation": "Lower-cost ceramic matrix formulations for broader adoption."
+    },
+    "engine_block": {
+      "primaryMaterial": "High-performance aluminum-silicon alloy",
+      "whyChosen": "Supports high specific output with reduced front-axle mass.",
+      "tradeoff": "Tighter cooling and lubrication design margins.",
+      "futureInnovation": "Functionally graded alloys for hot-spot durability."
+    },
+    "hood": {
+      "primaryMaterial": "Carbon fiber composite",
+      "whyChosen": "Cuts mass high on the vehicle and improves center-of-gravity placement.",
+      "tradeoff": "Impact repair often requires full panel replacement.",
+      "futureInnovation": "Fast-cycle resin systems for scalable composite body panels."
+    },
+    "windows": {
+      "primaryMaterial": "Laminated lightweight safety glass",
+      "whyChosen": "Maintains rigidity and premium acoustics at reduced thickness.",
+      "tradeoff": "Still heavier than optimized polymer glazing alternatives.",
+      "futureInnovation": "Hybrid glass-polymer laminates with hardcoat durability."
+    },
+    "tires": {
+      "primaryMaterial": "High-grip synthetic rubber with performance silica blends",
+      "whyChosen": "Delivers high lateral grip and braking performance.",
+      "tradeoff": "Faster wear and narrower optimal temperature window.",
+      "futureInnovation": "Adaptive tread compounds with thermal-response tuning."
+    }
+  },
+  "ev": {
+    "chassis": {
+      "primaryMaterial": "Mixed steel-aluminum battery-integrated platform",
+      "whyChosen": "Manages battery protection, torsional stiffness, and manufacturability.",
+      "tradeoff": "Joining dissimilar materials raises process complexity.",
+      "futureInnovation": "Structural battery packs with multifunctional load-bearing cells."
+    },
+    "brake_disc": {
+      "primaryMaterial": "Corrosion-resistant cast iron alloy",
+      "whyChosen": "Stable braking surface despite lower friction-brake usage in regen-heavy driving.",
+      "tradeoff": "Can still corrode from infrequent thermal cycling.",
+      "futureInnovation": "Low-corrosion coated rotors optimized for regenerative braking profiles."
+    },
+    "engine_block": {
+      "primaryMaterial": "N/A (electric drive unit housing: cast aluminum)",
+      "whyChosen": "Lightweight housing supports thermal pathways for motors and inverters.",
+      "tradeoff": "Requires precise thermal management around power electronics.",
+      "futureInnovation": "Integrated motor-inverter housings with advanced TIM materials."
+    },
+    "hood": {
+      "primaryMaterial": "Aluminum or polymer composite",
+      "whyChosen": "Offsets battery mass while maintaining front crash performance.",
+      "tradeoff": "Repair and part standardization differ across OEM platforms.",
+      "futureInnovation": "Recycled-content thermoplastic body panels with high impact toughness."
+    },
+    "windows": {
+      "primaryMaterial": "Acoustic laminated glass",
+      "whyChosen": "Reduces wind and road noise in quieter EV cabins.",
+      "tradeoff": "Weight increase versus basic tempered glazing.",
+      "futureInnovation": "Electrochromic glazing integrated with thermal load control."
+    },
+    "tires": {
+      "primaryMaterial": "Low-rolling-resistance rubber compound",
+      "whyChosen": "Improves range while handling high EV torque loads.",
+      "tradeoff": "May reduce peak grip compared with aggressive performance compounds.",
+      "futureInnovation": "Bio-based elastomers and wear-optimized tread architectures."
+    }
+  }
+}
