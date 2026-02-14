@@ -71,19 +71,45 @@ export function ResourcesPage({ isActive }: ResourcesPageProps) {
         <div className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-[var(--text-heading-light)]">Project Planning Templates</h2>
           <p className="text-lg text-secondary text-center max-w-4xl mx-auto mb-8">
-            Every good project starts with a plan. Use these resources to guide your experiment from idea to results and learn how to build projects effectively.
+            Simple frameworks to help you build real materials-driven projects.
           </p>
-          
-          <div className="bg-[var(--bg-light)] rounded-lg shadow-lg p-8 text-center border-2 border-dashed border-[var(--border-light)]">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 dark:bg-amber-900/60 rounded-full mb-4">
-              <i className="ti ti-clock text-2xl text-amber-600 dark:text-amber-400"></i>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-[var(--text-heading-light)]">Under Development</h3>
-            <p className="text-secondary mb-4">This section is under development and should be released mid-November 2025!</p>
-            <div className="inline-flex items-center px-4 py-2 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-full text-sm font-medium">
-              <i className="ti ti-calendar mr-2"></i>
-              Coming November 2025
-            </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <article className="bg-[var(--bg-light)] rounded-lg shadow-lg p-8 border border-[var(--border-light)]">
+              <h3 className="text-xl font-semibold mb-3 text-[var(--text-heading-light)]">MSE Project Planning Template</h3>
+              <p className="text-secondary mb-4">
+                A clear starting point for turning an idea into a structured materials project.
+              </p>
+              <p className="text-secondary mb-6">
+                This template helps you define your problem, material system, constraints, testing plan, and next steps. You do not need to be a materials science major to use it.
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1CNxT53NVmw3ItgzyvqfvTCtl0SE3p78i/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md text-sm transition duration-300 transform hover:-translate-y-1"
+              >
+                Download the MSE Project Planning Template <i className="ti ti-arrow-right ml-2"></i>
+              </a>
+            </article>
+
+            <article className="bg-[var(--bg-light)] rounded-lg shadow-lg p-8 border border-[var(--border-light)]">
+              <h3 className="text-xl font-semibold mb-3 text-[var(--text-heading-light)]">Materia Project Proposal Template</h3>
+              <p className="text-secondary mb-4">
+                A formal structure for presenting your project clearly and professionally.
+              </p>
+              <p className="text-secondary mb-6">
+                Use this template if you are submitting to a competition, applying for funding, building a serious portfolio project, or launching under Materia MSE.
+              </p>
+              <a
+                href="https://drive.google.com/file/d/17wXGktWdDoEDBlMdTapo7jMYaW7udKCa/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md text-sm transition duration-300 transform hover:-translate-y-1"
+              >
+                Download the Materia Project Proposal Template <i className="ti ti-arrow-right ml-2"></i>
+              </a>
+            </article>
           </div>
         </div>
 
