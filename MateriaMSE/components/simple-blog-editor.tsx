@@ -216,6 +216,7 @@ export function SimpleBlogEditor({ value, onChange, placeholder }: SimpleBlogEdi
                   />
                   {block.content && (
                     <div className="border border-[var(--border-light)] rounded-lg p-2 bg-[var(--bg-soft-light)]">
+                      {/* eslint-disable-next-line @next/next/no-img-element -- dynamic user-provided preview URL */}
                       <img 
                         src={block.content} 
                         alt="Preview" 

@@ -122,7 +122,7 @@ export function ResourcesPage({ isActive }: ResourcesPageProps) {
               <i className="ti ti-spotlight text-2xl text-[var(--accent-primary)]"></i>
             </div>
             <p className="text-lg text-secondary mb-6">
-              In the future, we'll showcase projects submitted by our community. Got something cool you're working on?
+              In the future, we&apos;ll showcase projects submitted by our community. Got something cool you&apos;re working on?
             </p>
             <a href="/join" className="page-link inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300 transform hover:-translate-y-1">
               Join Us <i className="ti ti-arrow-right ml-2"></i>

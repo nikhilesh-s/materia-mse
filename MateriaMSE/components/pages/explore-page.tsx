@@ -32,7 +32,7 @@ export function ExplorePage({ isActive }: ExplorePageProps) {
       <div className="content-container">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-heading-light)] mb-3">Explore</h1>
-          <p className="text-lg text-secondary">What's Coming Up from Materia</p>
+          <p className="text-lg text-secondary">What&apos;s Coming Up from Materia</p>
         </div>
 
         <div className="mb-14">

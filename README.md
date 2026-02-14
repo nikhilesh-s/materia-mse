@@ -23,3 +23,6 @@ When importing this repo into Vercel:
 - Root Directory: `MateriaMSE`
 - Build Command: `npm run build`
 - Install Command: `npm install`
+- Node.js Version in Vercel Project Settings: `20.x`
+
+Note: this repo pins Node via `MateriaMSE/package.json` engines (`20.x`). If Vercel Project Settings are set to `24.x`, Vercel will still build with `20.x` and show a warning.
