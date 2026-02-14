@@ -123,8 +123,8 @@ export function AboutPage({ isActive }: AboutPageProps) {
               <AccordionContent className="text-base text-secondary leading-relaxed space-y-4">
                 <div className="relative w-full max-w-sm h-56 rounded-xl overflow-hidden border border-[var(--border-light)] bg-[var(--bg-soft-light)]">
                   <Image
-                    src="https://via.placeholder.com/800x450.png?text=Nikhilesh+Suravarjjala+Photo+Placeholder"
-                    alt="Nikhilesh Suravarjjala placeholder"
+                    src="https://i.imgur.com/BjjzPXF.jpeg"
+                    alt="Nikhilesh Suravarjjala"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 400px"
