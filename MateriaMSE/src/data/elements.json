@@ -1,542 +1,60 @@
 [
-  {
-    "atomicNumber": 1,
-    "symbol": "H",
-    "name": "Hydrogen",
-    "group": 1,
-    "period": 1,
-    "category": "nonmetal",
-    "density": "0.0000899 g/cm^3 (gas, STP)",
-    "meltingPoint": "-259.16 C",
-    "engineeringApplications": [
-      "Fuel cells and hydrogen energy storage",
-      "Reducing atmosphere for high-temperature processing",
-      "Semiconductor passivation processes"
-    ]
-  },
-  {
-    "atomicNumber": 2,
-    "symbol": "He",
-    "name": "Helium",
-    "group": 18,
-    "period": 1,
-    "category": "noble gas",
-    "density": "0.0001785 g/cm^3 (gas, STP)",
-    "meltingPoint": "No freezing point at 1 atm",
-    "engineeringApplications": [
-      "Cryogenics for superconducting magnets",
-      "Shielding gas for welding and additive manufacturing",
-      "Leak detection and pressurization"
-    ]
-  },
-  {
-    "atomicNumber": 3,
-    "symbol": "Li",
-    "name": "Lithium",
-    "group": 1,
-    "period": 2,
-    "category": "alkali metal",
-    "density": "0.534 g/cm^3",
-    "meltingPoint": "180.54 C",
-    "engineeringApplications": [
-      "Lithium-ion battery anodes and electrolytes",
-      "Lightweight aluminum-lithium aerospace alloys",
-      "High-temperature greases and lubricants"
-    ]
-  },
-  {
-    "atomicNumber": 4,
-    "symbol": "Be",
-    "name": "Beryllium",
-    "group": 2,
-    "period": 2,
-    "category": "alkaline earth metal",
-    "density": "1.85 g/cm^3",
-    "meltingPoint": "1287 C",
-    "engineeringApplications": [
-      "Aerospace structures requiring stiffness-to-weight",
-      "X-ray windows and instrumentation",
-      "Be-Cu springs and electrical connectors"
-    ]
-  },
-  {
-    "atomicNumber": 5,
-    "symbol": "B",
-    "name": "Boron",
-    "group": 13,
-    "period": 2,
-    "category": "metalloid",
-    "density": "2.34 g/cm^3",
-    "meltingPoint": "2076 C",
-    "engineeringApplications": [
-      "Boron carbide ceramics for armor",
-      "Doping for semiconductor devices",
-      "Neutron absorption materials"
-    ]
-  },
-  {
-    "atomicNumber": 6,
-    "symbol": "C",
-    "name": "Carbon",
-    "group": 14,
-    "period": 2,
-    "category": "nonmetal",
-    "density": "2.26 g/cm^3 (graphite)",
-    "meltingPoint": "Sublimes ~3642 C",
-    "engineeringApplications": [
-      "Carbon fiber composites",
-      "Steel strengthening via carburizing",
-      "Electrodes and thermal management (graphite)"
-    ]
-  },
-  {
-    "atomicNumber": 7,
-    "symbol": "N",
-    "name": "Nitrogen",
-    "group": 15,
-    "period": 2,
-    "category": "nonmetal",
-    "density": "0.0012506 g/cm^3 (gas, STP)",
-    "meltingPoint": "-210.00 C",
-    "engineeringApplications": [
-      "Inerting and purge gas in manufacturing",
-      "Nitriding for surface hardening of steels",
-      "Liquid nitrogen for cryogenic processing"
-    ]
-  },
-  {
-    "atomicNumber": 8,
-    "symbol": "O",
-    "name": "Oxygen",
-    "group": 16,
-    "period": 2,
-    "category": "nonmetal",
-    "density": "0.001429 g/cm^3 (gas, STP)",
-    "meltingPoint": "-218.79 C",
-    "engineeringApplications": [
-      "Steelmaking and oxidation refining",
-      "Rocket propulsion (LOX)",
-      "Medical oxygen systems"
-    ]
-  },
-  {
-    "atomicNumber": 9,
-    "symbol": "F",
-    "name": "Fluorine",
-    "group": 17,
-    "period": 2,
-    "category": "nonmetal",
-    "density": "0.001696 g/cm^3 (gas, STP)",
-    "meltingPoint": "-219.67 C",
-    "engineeringApplications": [
-      "Fluoropolymers for chemical resistance (PTFE family)",
-      "Etching and cleaning in semiconductor fabrication",
-      "Electrolytes and fluorinated salts"
-    ]
-  },
-  {
-    "atomicNumber": 10,
-    "symbol": "Ne",
-    "name": "Neon",
-    "group": 18,
-    "period": 2,
-    "category": "noble gas",
-    "density": "0.0008999 g/cm^3 (gas, STP)",
-    "meltingPoint": "-248.59 C",
-    "engineeringApplications": [
-      "High-voltage indicators and discharge tubes",
-      "Cryogenic refrigeration applications",
-      "Laser systems"
-    ]
-  },
-  {
-    "atomicNumber": 11,
-    "symbol": "Na",
-    "name": "Sodium",
-    "group": 1,
-    "period": 3,
-    "category": "alkali metal",
-    "density": "0.97 g/cm^3",
-    "meltingPoint": "97.79 C",
-    "engineeringApplications": [
-      "Sodium-based heat transfer (specialty reactors)",
-      "Sodium vapor lighting",
-      "Chemical synthesis and reduction processes"
-    ]
-  },
-  {
-    "atomicNumber": 12,
-    "symbol": "Mg",
-    "name": "Magnesium",
-    "group": 2,
-    "period": 3,
-    "category": "alkaline earth metal",
-    "density": "1.74 g/cm^3",
-    "meltingPoint": "650 C",
-    "engineeringApplications": [
-      "Lightweight structural alloys (automotive/aerospace)",
-      "Sacrificial anodes for corrosion protection",
-      "Additive alloying in aluminum processing"
-    ]
-  },
-  {
-    "atomicNumber": 13,
-    "symbol": "Al",
-    "name": "Aluminum",
-    "group": 13,
-    "period": 3,
-    "category": "transition metal",
-    "density": "2.70 g/cm^3",
-    "meltingPoint": "660.32 C",
-    "engineeringApplications": [
-      "Lightweight structural components",
-      "Electrical conductors and busbars",
-      "Corrosion-resistant packaging and heat exchangers"
-    ]
-  },
-  {
-    "atomicNumber": 14,
-    "symbol": "Si",
-    "name": "Silicon",
-    "group": 14,
-    "period": 3,
-    "category": "metalloid",
-    "density": "2.33 g/cm^3",
-    "meltingPoint": "1414 C",
-    "engineeringApplications": [
-      "Semiconductor devices and ICs",
-      "Solar photovoltaics",
-      "Silicone polymers and sealants"
-    ]
-  },
-  {
-    "atomicNumber": 15,
-    "symbol": "P",
-    "name": "Phosphorus",
-    "group": 15,
-    "period": 3,
-    "category": "nonmetal",
-    "density": "1.82 g/cm^3 (white)",
-    "meltingPoint": "44.15 C (white)",
-    "engineeringApplications": [
-      "Alloying and deoxidation in metallurgy",
-      "Flame retardant chemistries",
-      "Semiconductor doping (n-type)"
-    ]
-  },
-  {
-    "atomicNumber": 16,
-    "symbol": "S",
-    "name": "Sulfur",
-    "group": 16,
-    "period": 3,
-    "category": "nonmetal",
-    "density": "2.07 g/cm^3",
-    "meltingPoint": "115.21 C",
-    "engineeringApplications": [
-      "Vulcanization of rubber",
-      "Battery chemistries (Li-S research)",
-      "Chemical processing and fertilizers"
-    ]
-  },
-  {
-    "atomicNumber": 17,
-    "symbol": "Cl",
-    "name": "Chlorine",
-    "group": 17,
-    "period": 3,
-    "category": "nonmetal",
-    "density": "0.003214 g/cm^3 (gas, STP)",
-    "meltingPoint": "-101.5 C",
-    "engineeringApplications": [
-      "PVC and chlorinated polymer production",
-      "Water treatment and disinfection",
-      "Etchants and process chemistry"
-    ]
-  },
-  {
-    "atomicNumber": 18,
-    "symbol": "Ar",
-    "name": "Argon",
-    "group": 18,
-    "period": 3,
-    "category": "noble gas",
-    "density": "0.001784 g/cm^3 (gas, STP)",
-    "meltingPoint": "-189.34 C",
-    "engineeringApplications": [
-      "Shielding gas for welding",
-      "Inert atmosphere for materials processing",
-      "Insulating gas in double-pane windows"
-    ]
-  },
-  {
-    "atomicNumber": 19,
-    "symbol": "K",
-    "name": "Potassium",
-    "group": 1,
-    "period": 4,
-    "category": "alkali metal",
-    "density": "0.862 g/cm^3",
-    "meltingPoint": "63.5 C",
-    "engineeringApplications": [
-      "Specialty glass formulations",
-      "Chemical synthesis and reduction",
-      "Alkali activation in materials processing"
-    ]
-  },
-  {
-    "atomicNumber": 20,
-    "symbol": "Ca",
-    "name": "Calcium",
-    "group": 2,
-    "period": 4,
-    "category": "alkaline earth metal",
-    "density": "1.55 g/cm^3",
-    "meltingPoint": "842 C",
-    "engineeringApplications": [
-      "Steelmaking desulfurization and deoxidation",
-      "Cement and construction chemistry (as compounds)",
-      "Biomaterials (hydroxyapatite systems)"
-    ]
-  },
-  {
-    "atomicNumber": 21,
-    "symbol": "Sc",
-    "name": "Scandium",
-    "group": 3,
-    "period": 4,
-    "category": "transition metal",
-    "density": "2.99 g/cm^3",
-    "meltingPoint": "1541 C",
-    "engineeringApplications": [
-      "Al-Sc alloys for high strength and weldability",
-      "Aerospace and sporting goods alloys",
-      "Solid oxide fuel cell research"
-    ]
-  },
-  {
-    "atomicNumber": 22,
-    "symbol": "Ti",
-    "name": "Titanium",
-    "group": 4,
-    "period": 4,
-    "category": "transition metal",
-    "density": "4.51 g/cm^3",
-    "meltingPoint": "1668 C",
-    "engineeringApplications": [
-      "Corrosion-resistant aerospace structures",
-      "Biomedical implants",
-      "High-performance fasteners"
-    ]
-  },
-  {
-    "atomicNumber": 23,
-    "symbol": "V",
-    "name": "Vanadium",
-    "group": 5,
-    "period": 4,
-    "category": "transition metal",
-    "density": "6.11 g/cm^3",
-    "meltingPoint": "1910 C",
-    "engineeringApplications": [
-      "Strengthening alloying in steels",
-      "Vanadium redox flow batteries",
-      "High-temperature turbine materials (alloying)"
-    ]
-  },
-  {
-    "atomicNumber": 24,
-    "symbol": "Cr",
-    "name": "Chromium",
-    "group": 6,
-    "period": 4,
-    "category": "transition metal",
-    "density": "7.19 g/cm^3",
-    "meltingPoint": "1907 C",
-    "engineeringApplications": [
-      "Stainless steel corrosion resistance",
-      "Hard chrome coatings and wear surfaces",
-      "Superalloy oxidation resistance"
-    ]
-  },
-  {
-    "atomicNumber": 25,
-    "symbol": "Mn",
-    "name": "Manganese",
-    "group": 7,
-    "period": 4,
-    "category": "transition metal",
-    "density": "7.21 g/cm^3",
-    "meltingPoint": "1246 C",
-    "engineeringApplications": [
-      "Steel deoxidizer and alloying element",
-      "Battery cathode materials (LMO/NMC components)",
-      "Wear-resistant steels"
-    ]
-  },
-  {
-    "atomicNumber": 26,
-    "symbol": "Fe",
-    "name": "Iron",
-    "group": 8,
-    "period": 4,
-    "category": "transition metal",
-    "density": "7.87 g/cm^3",
-    "meltingPoint": "1538 C",
-    "engineeringApplications": [
-      "Structural steels for infrastructure",
-      "Cast irons for machine components",
-      "Magnetic cores and electrical steels"
-    ]
-  },
-  {
-    "atomicNumber": 27,
-    "symbol": "Co",
-    "name": "Cobalt",
-    "group": 9,
-    "period": 4,
-    "category": "transition metal",
-    "density": "8.90 g/cm^3",
-    "meltingPoint": "1495 C",
-    "engineeringApplications": [
-      "Superalloys for high-temperature turbines",
-      "Li-ion battery cathodes (NMC/NCA components)",
-      "Hardmetals and wear-resistant coatings"
-    ]
-  },
-  {
-    "atomicNumber": 28,
-    "symbol": "Ni",
-    "name": "Nickel",
-    "group": 10,
-    "period": 4,
-    "category": "transition metal",
-    "density": "8.90 g/cm^3",
-    "meltingPoint": "1455 C",
-    "engineeringApplications": [
-      "Corrosion-resistant alloys (Inconel family)",
-      "Electroplating and surface engineering",
-      "Battery materials and catalysts"
-    ]
-  },
-  {
-    "atomicNumber": 29,
-    "symbol": "Cu",
-    "name": "Copper",
-    "group": 11,
-    "period": 4,
-    "category": "transition metal",
-    "density": "8.96 g/cm^3",
-    "meltingPoint": "1084.62 C",
-    "engineeringApplications": [
-      "Electrical wiring and power electronics",
-      "Heat exchangers and thermal management",
-      "Antimicrobial surfaces"
-    ]
-  },
-  {
-    "atomicNumber": 30,
-    "symbol": "Zn",
-    "name": "Zinc",
-    "group": 12,
-    "period": 4,
-    "category": "transition metal",
-    "density": "7.14 g/cm^3",
-    "meltingPoint": "419.53 C",
-    "engineeringApplications": [
-      "Galvanizing for corrosion protection",
-      "Die casting alloys",
-      "Zn-based batteries and coatings"
-    ]
-  },
-  {
-    "atomicNumber": 31,
-    "symbol": "Ga",
-    "name": "Gallium",
-    "group": 13,
-    "period": 4,
-    "category": "transition metal",
-    "density": "5.91 g/cm^3",
-    "meltingPoint": "29.76 C",
-    "engineeringApplications": [
-      "GaN and GaAs semiconductors",
-      "High-frequency RF electronics",
-      "LEDs and optoelectronics"
-    ]
-  },
-  {
-    "atomicNumber": 32,
-    "symbol": "Ge",
-    "name": "Germanium",
-    "group": 14,
-    "period": 4,
-    "category": "metalloid",
-    "density": "5.32 g/cm^3",
-    "meltingPoint": "938.25 C",
-    "engineeringApplications": [
-      "Infrared optics and detectors",
-      "Semiconductor devices and photonics",
-      "High-index optical materials"
-    ]
-  },
-  {
-    "atomicNumber": 33,
-    "symbol": "As",
-    "name": "Arsenic",
-    "group": 15,
-    "period": 4,
-    "category": "metalloid",
-    "density": "5.73 g/cm^3",
-    "meltingPoint": "Sublimes ~615 C",
-    "engineeringApplications": [
-      "GaAs semiconductor devices",
-      "Alloying in specialty materials",
-      "Photovoltaics research"
-    ]
-  },
-  {
-    "atomicNumber": 34,
-    "symbol": "Se",
-    "name": "Selenium",
-    "group": 16,
-    "period": 4,
-    "category": "nonmetal",
-    "density": "4.81 g/cm^3",
-    "meltingPoint": "221 C",
-    "engineeringApplications": [
-      "Photoconductors and sensors",
-      "Thin-film solar cells (CIGS context)",
-      "Glass decolorizing and additives"
-    ]
-  },
-  {
-    "atomicNumber": 35,
-    "symbol": "Br",
-    "name": "Bromine",
-    "group": 17,
-    "period": 4,
-    "category": "nonmetal",
-    "density": "3.12 g/cm^3 (liquid)",
-    "meltingPoint": "-7.2 C",
-    "engineeringApplications": [
-      "Flame retardant chemistries",
-      "Specialty polymers and intermediates",
-      "Water treatment chemicals"
-    ]
-  },
-  {
-    "atomicNumber": 36,
-    "symbol": "Kr",
-    "name": "Krypton",
-    "group": 18,
-    "period": 4,
-    "category": "noble gas",
-    "density": "0.003749 g/cm^3 (gas, STP)",
-    "meltingPoint": "-157.36 C",
-    "engineeringApplications": [
-      "High-performance lighting and flash lamps",
-      "Insulating gas in specialty windows",
-      "Laser and plasma applications"
-    ]
-  }
+  {"atomicNumber":1,"symbol":"H","name":"Hydrogen","group":1,"period":1,"category":"nonmetal","density":"0.0000899 g/cm^3 (gas, STP)","meltingPoint":"-259.16 C","engineeringApplications":["Fuel cells and hydrogen energy storage","Reducing atmosphere for high-temperature processing","Semiconductor passivation processes"]},
+  {"atomicNumber":2,"symbol":"He","name":"Helium","group":18,"period":1,"category":"noble gas","density":"0.0001785 g/cm^3 (gas, STP)","meltingPoint":"No freezing point at 1 atm","engineeringApplications":["Cryogenics for superconducting magnets","Shielding gas for welding and additive manufacturing","Leak detection and pressurization"]},
+
+  {"atomicNumber":3,"symbol":"Li","name":"Lithium","group":1,"period":2,"category":"alkali metal","density":"0.534 g/cm^3","meltingPoint":"180.54 C","engineeringApplications":["Lithium-ion battery anodes and electrolytes","Lightweight aluminum-lithium aerospace alloys","High-temperature greases and lubricants"]},
+  {"atomicNumber":4,"symbol":"Be","name":"Beryllium","group":2,"period":2,"category":"alkaline earth metal","density":"1.85 g/cm^3","meltingPoint":"1287 C","engineeringApplications":["Aerospace stiffness-to-weight structures","X-ray windows and instrumentation","Be-Cu springs and electrical connectors"]},
+  {"atomicNumber":5,"symbol":"B","name":"Boron","group":13,"period":2,"category":"metalloid","density":"2.34 g/cm^3","meltingPoint":"2076 C","engineeringApplications":["Boron carbide ceramics for armor","Doping for semiconductor devices","Neutron absorption materials"]},
+  {"atomicNumber":6,"symbol":"C","name":"Carbon","group":14,"period":2,"category":"nonmetal","density":"2.26 g/cm^3 (graphite)","meltingPoint":"Sublimes ~3642 C","engineeringApplications":["Carbon fiber composites","Steel strengthening via carburizing","Electrodes and thermal management (graphite)"]},
+  {"atomicNumber":7,"symbol":"N","name":"Nitrogen","group":15,"period":2,"category":"nonmetal","density":"0.0012506 g/cm^3 (gas, STP)","meltingPoint":"-210.00 C","engineeringApplications":["Inerting and purge gas in manufacturing","Nitriding for surface hardening of steels","Liquid nitrogen for cryogenic processing"]},
+  {"atomicNumber":8,"symbol":"O","name":"Oxygen","group":16,"period":2,"category":"nonmetal","density":"0.001429 g/cm^3 (gas, STP)","meltingPoint":"-218.79 C","engineeringApplications":["Steelmaking and oxidation refining","Rocket propulsion (LOX)","Medical oxygen systems"]},
+  {"atomicNumber":9,"symbol":"F","name":"Fluorine","group":17,"period":2,"category":"nonmetal","density":"0.001696 g/cm^3 (gas, STP)","meltingPoint":"-219.67 C","engineeringApplications":["Fluoropolymers for chemical resistance","Semiconductor etching chemistry","Electrolytes and fluorinated salts"]},
+  {"atomicNumber":10,"symbol":"Ne","name":"Neon","group":18,"period":2,"category":"noble gas","density":"0.0008999 g/cm^3 (gas, STP)","meltingPoint":"-248.59 C","engineeringApplications":["Discharge tubes and indicators","Cryogenic refrigeration applications","Laser systems"]},
+
+  {"atomicNumber":11,"symbol":"Na","name":"Sodium","group":1,"period":3,"category":"alkali metal","density":"0.97 g/cm^3","meltingPoint":"97.79 C","engineeringApplications":["Specialty heat-transfer systems","Sodium vapor lighting","Chemical synthesis and reduction"]},
+  {"atomicNumber":12,"symbol":"Mg","name":"Magnesium","group":2,"period":3,"category":"alkaline earth metal","density":"1.74 g/cm^3","meltingPoint":"650 C","engineeringApplications":["Lightweight structural alloys","Sacrificial anodes for corrosion protection","Alloying in aluminum processing"]},
+  {"atomicNumber":13,"symbol":"Al","name":"Aluminum","group":13,"period":3,"category":"transition metal","density":"2.70 g/cm^3","meltingPoint":"660.32 C","engineeringApplications":["Lightweight structural components","Electrical conductors and busbars","Heat exchangers and corrosion-resistant systems"]},
+  {"atomicNumber":14,"symbol":"Si","name":"Silicon","group":14,"period":3,"category":"metalloid","density":"2.33 g/cm^3","meltingPoint":"1414 C","engineeringApplications":["Semiconductor devices and ICs","Solar photovoltaics","Silicone polymers and sealants"]},
+  {"atomicNumber":15,"symbol":"P","name":"Phosphorus","group":15,"period":3,"category":"nonmetal","density":"1.82 g/cm^3 (white)","meltingPoint":"44.15 C (white)","engineeringApplications":["Alloying and deoxidation in metallurgy","Flame retardant chemistries","Semiconductor doping (n-type)"]},
+  {"atomicNumber":16,"symbol":"S","name":"Sulfur","group":16,"period":3,"category":"nonmetal","density":"2.07 g/cm^3","meltingPoint":"115.21 C","engineeringApplications":["Vulcanization of rubber","Battery chemistries (Li-S research)","Chemical processing and fertilizers"]},
+  {"atomicNumber":17,"symbol":"Cl","name":"Chlorine","group":17,"period":3,"category":"nonmetal","density":"0.003214 g/cm^3 (gas, STP)","meltingPoint":"-101.5 C","engineeringApplications":["PVC and chlorinated polymer production","Water treatment and disinfection","Etchants and process chemistry"]},
+  {"atomicNumber":18,"symbol":"Ar","name":"Argon","group":18,"period":3,"category":"noble gas","density":"0.001784 g/cm^3 (gas, STP)","meltingPoint":"-189.34 C","engineeringApplications":["Shielding gas for welding","Inert atmosphere for processing","Insulating gas in double-pane windows"]},
+
+  {"atomicNumber":19,"symbol":"K","name":"Potassium","group":1,"period":4,"category":"alkali metal","density":"0.862 g/cm^3","meltingPoint":"63.5 C","engineeringApplications":["Specialty glass formulations","Chemical synthesis and reduction","Alkali activation in materials processing"]},
+  {"atomicNumber":20,"symbol":"Ca","name":"Calcium","group":2,"period":4,"category":"alkaline earth metal","density":"1.55 g/cm^3","meltingPoint":"842 C","engineeringApplications":["Steel desulfurization and deoxidation","Cement and construction chemistry (compounds)","Biomaterials (calcium phosphates)"]},
+  {"atomicNumber":21,"symbol":"Sc","name":"Scandium","group":3,"period":4,"category":"transition metal","density":"2.99 g/cm^3","meltingPoint":"1541 C","engineeringApplications":["Al-Sc alloys for strength and weldability","Aerospace and sporting alloys","SOFC materials research"]},
+  {"atomicNumber":22,"symbol":"Ti","name":"Titanium","group":4,"period":4,"category":"transition metal","density":"4.51 g/cm^3","meltingPoint":"1668 C","engineeringApplications":["Aerospace structures and fasteners","Biomedical implants","Corrosion-resistant chemical equipment"]},
+  {"atomicNumber":23,"symbol":"V","name":"Vanadium","group":5,"period":4,"category":"transition metal","density":"6.11 g/cm^3","meltingPoint":"1910 C","engineeringApplications":["Strengthening alloying in steels","Vanadium redox flow batteries","High-temperature alloying"]},
+  {"atomicNumber":24,"symbol":"Cr","name":"Chromium","group":6,"period":4,"category":"transition metal","density":"7.19 g/cm^3","meltingPoint":"1907 C","engineeringApplications":["Stainless steels for corrosion resistance","Hard coatings and wear surfaces","Oxidation resistance in superalloys"]},
+  {"atomicNumber":25,"symbol":"Mn","name":"Manganese","group":7,"period":4,"category":"transition metal","density":"7.21 g/cm^3","meltingPoint":"1246 C","engineeringApplications":["Steel deoxidizer and alloying","Battery cathode materials components","Wear-resistant steels"]},
+  {"atomicNumber":26,"symbol":"Fe","name":"Iron","group":8,"period":4,"category":"transition metal","density":"7.87 g/cm^3","meltingPoint":"1538 C","engineeringApplications":["Structural steels","Cast irons for machine components","Magnetic cores and electrical steels"]},
+  {"atomicNumber":27,"symbol":"Co","name":"Cobalt","group":9,"period":4,"category":"transition metal","density":"8.90 g/cm^3","meltingPoint":"1495 C","engineeringApplications":["Superalloys for turbines","Battery cathode materials (NMC/NCA)","Wear-resistant hardfacing"]},
+  {"atomicNumber":28,"symbol":"Ni","name":"Nickel","group":10,"period":4,"category":"transition metal","density":"8.90 g/cm^3","meltingPoint":"1455 C","engineeringApplications":["High-temperature corrosion-resistant alloys","Electroplating and surface engineering","Catalysts and battery materials"]},
+  {"atomicNumber":29,"symbol":"Cu","name":"Copper","group":11,"period":4,"category":"transition metal","density":"8.96 g/cm^3","meltingPoint":"1084.62 C","engineeringApplications":["Electrical wiring and power electronics","Heat exchangers and thermal management","Antimicrobial surfaces"]},
+  {"atomicNumber":30,"symbol":"Zn","name":"Zinc","group":12,"period":4,"category":"transition metal","density":"7.14 g/cm^3","meltingPoint":"419.53 C","engineeringApplications":["Galvanizing for corrosion protection","Die casting alloys","Coatings and Zn-based batteries"]},
+  {"atomicNumber":31,"symbol":"Ga","name":"Gallium","group":13,"period":4,"category":"transition metal","density":"5.91 g/cm^3","meltingPoint":"29.76 C","engineeringApplications":["GaN and GaAs semiconductors","RF and power electronics","LEDs and optoelectronics"]},
+  {"atomicNumber":32,"symbol":"Ge","name":"Germanium","group":14,"period":4,"category":"metalloid","density":"5.32 g/cm^3","meltingPoint":"938.25 C","engineeringApplications":["Infrared optics and detectors","Semiconductor devices","High-index optical materials"]},
+  {"atomicNumber":33,"symbol":"As","name":"Arsenic","group":15,"period":4,"category":"metalloid","density":"5.73 g/cm^3","meltingPoint":"Sublimes ~615 C","engineeringApplications":["GaAs devices and photonics","Specialty alloying (limited)","Photovoltaics research"]},
+  {"atomicNumber":34,"symbol":"Se","name":"Selenium","group":16,"period":4,"category":"nonmetal","density":"4.81 g/cm^3","meltingPoint":"221 C","engineeringApplications":["Photoconductors and sensors","Thin-film photovoltaics context","Glass additives"]},
+  {"atomicNumber":35,"symbol":"Br","name":"Bromine","group":17,"period":4,"category":"nonmetal","density":"3.12 g/cm^3 (liquid)","meltingPoint":"-7.2 C","engineeringApplications":["Flame retardant chemistries","Specialty polymers intermediates","Water treatment chemicals"]},
+  {"atomicNumber":36,"symbol":"Kr","name":"Krypton","group":18,"period":4,"category":"noble gas","density":"0.003749 g/cm^3 (gas, STP)","meltingPoint":"-157.36 C","engineeringApplications":["High-intensity lighting","Insulating gas for specialty glazing","Laser and plasma applications"]},
+
+  {"atomicNumber":37,"symbol":"Rb","name":"Rubidium","group":1,"period":5,"category":"alkali metal","density":"1.53 g/cm^3","meltingPoint":"39.31 C","engineeringApplications":["Specialty vacuum devices","Atomic clocks (Rb standards)","Research in photoemissive materials"]},
+  {"atomicNumber":38,"symbol":"Sr","name":"Strontium","group":2,"period":5,"category":"alkaline earth metal","density":"2.64 g/cm^3","meltingPoint":"777 C","engineeringApplications":["Ceramic ferrites and electronics (compounds)","Specialty glass and optics (compounds)","Solid oxide fuel cell materials (compounds)"]},
+  {"atomicNumber":39,"symbol":"Y","name":"Yttrium","group":3,"period":5,"category":"transition metal","density":"4.47 g/cm^3","meltingPoint":"1526 C","engineeringApplications":["Yttria-stabilized zirconia thermal barriers","Phosphors for displays and lighting","High-temperature ceramics additives"]},
+  {"atomicNumber":40,"symbol":"Zr","name":"Zirconium","group":4,"period":5,"category":"transition metal","density":"6.52 g/cm^3","meltingPoint":"1855 C","engineeringApplications":["Nuclear cladding (low neutron capture)","Corrosion-resistant chemical equipment","Ceramics and refractories (zirconia systems)"]},
+  {"atomicNumber":41,"symbol":"Nb","name":"Niobium","group":5,"period":5,"category":"transition metal","density":"8.57 g/cm^3","meltingPoint":"2477 C","engineeringApplications":["Superconducting RF cavities","Microalloying in HSLA steels","High-temperature alloys"]},
+  {"atomicNumber":42,"symbol":"Mo","name":"Molybdenum","group":6,"period":5,"category":"transition metal","density":"10.28 g/cm^3","meltingPoint":"2623 C","engineeringApplications":["High-temperature furnace hardware","Alloying for creep and strength","Catalysts in chemical processing"]},
+  {"atomicNumber":43,"symbol":"Tc","name":"Technetium","group":7,"period":5,"category":"transition metal","density":"11 g/cm^3 (est.)","meltingPoint":"2157 C (est.)","engineeringApplications":["Radiotracer production (medical)","Research in corrosion chemistry","Limited engineering use due to radioactivity"]},
+  {"atomicNumber":44,"symbol":"Ru","name":"Ruthenium","group":8,"period":5,"category":"transition metal","density":"12.37 g/cm^3","meltingPoint":"2334 C","engineeringApplications":["Hardening additions to platinum alloys","Thin-film resistors and contacts","Catalysts for electrochemistry"]},
+  {"atomicNumber":45,"symbol":"Rh","name":"Rhodium","group":9,"period":5,"category":"transition metal","density":"12.41 g/cm^3","meltingPoint":"1964 C","engineeringApplications":["Catalytic converters","High-reflectivity coatings","High-temperature thermocouples (alloys)"]},
+  {"atomicNumber":46,"symbol":"Pd","name":"Palladium","group":10,"period":5,"category":"transition metal","density":"12.02 g/cm^3","meltingPoint":"1554.9 C","engineeringApplications":["Hydrogen purification membranes","Catalysts for chemical synthesis","Electronics plating and contacts"]},
+  {"atomicNumber":47,"symbol":"Ag","name":"Silver","group":11,"period":5,"category":"transition metal","density":"10.49 g/cm^3","meltingPoint":"961.78 C","engineeringApplications":["High-conductivity electrical contacts","Antimicrobial coatings","Brazing and soldering alloys"]},
+  {"atomicNumber":48,"symbol":"Cd","name":"Cadmium","group":12,"period":5,"category":"transition metal","density":"8.65 g/cm^3","meltingPoint":"321.07 C","engineeringApplications":["Corrosion-resistant plating (legacy)","CdTe photovoltaics","Ni-Cd batteries (legacy)"]},
+  {"atomicNumber":49,"symbol":"In","name":"Indium","group":13,"period":5,"category":"transition metal","density":"7.31 g/cm^3","meltingPoint":"156.6 C","engineeringApplications":["Transparent conductors (ITO)","Low-melt solders and seals","Semiconductor compounds (InP/InGaAs)"]},
+  {"atomicNumber":50,"symbol":"Sn","name":"Tin","group":14,"period":5,"category":"transition metal","density":"7.31 g/cm^3","meltingPoint":"231.93 C","engineeringApplications":["Solder alloys","Protective tin coatings","Alloying in bronzes"]},
+  {"atomicNumber":51,"symbol":"Sb","name":"Antimony","group":15,"period":5,"category":"metalloid","density":"6.68 g/cm^3","meltingPoint":"630.6 C","engineeringApplications":["Flame retardant synergists","Lead-acid battery grid alloys","Semiconductor materials (limited)"]},
+  {"atomicNumber":52,"symbol":"Te","name":"Tellurium","group":16,"period":5,"category":"metalloid","density":"6.24 g/cm^3","meltingPoint":"449.5 C","engineeringApplications":["Thermoelectric materials (Bi2Te3 systems)","Alloying addition to improve machinability","Solar cell materials (CdTe context)"]},
+  {"atomicNumber":53,"symbol":"I","name":"Iodine","group":17,"period":5,"category":"nonmetal","density":"4.93 g/cm^3","meltingPoint":"113.7 C","engineeringApplications":["Halogen lamps (legacy)","Specialty optical and chemical processes","Radiographic contrast and tracers"]},
+  {"atomicNumber":54,"symbol":"Xe","name":"Xenon","group":18,"period":5,"category":"noble gas","density":"0.005894 g/cm^3 (gas, STP)","meltingPoint":"-111.75 C","engineeringApplications":["High-intensity discharge lighting","Ion propulsion for spacecraft","Plasma etching and process gases"]}
 ]

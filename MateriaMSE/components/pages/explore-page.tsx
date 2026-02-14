@@ -35,6 +35,19 @@ export function ExplorePage({ isActive }: ExplorePageProps) {
           <p className="text-lg text-secondary">What&apos;s Coming Up from Materia</p>
         </div>
 
+        <div className="mb-10">
+          <div className="bg-[var(--bg-light)] rounded-2xl border border-[var(--border-light)] shadow-sm p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-heading-light)] mb-3 text-center">Interactive Engineering Tools</h2>
+            <p className="text-secondary text-center max-w-3xl mx-auto">
+              Developed by Nikhilesh Suravarjjala and Kelvin Zhang to bring materials science to life through interactive, applied learning tools.
+            </p>
+            <div className="mt-5 max-w-3xl mx-auto text-sm text-secondary space-y-1">
+              <p>Material Explorer — Developed by Kelvin Zhang</p>
+              <p>Interactive Periodic Table &amp; Car Materials Map — Developed by Nikhilesh Suravarjjala</p>
+            </div>
+          </div>
+        </div>
+
         <div className="mb-14">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-[var(--text-heading-light)]">Explore Tools</h2>
           <div className="grid md:grid-cols-3 gap-6">
