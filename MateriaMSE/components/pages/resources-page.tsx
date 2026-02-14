@@ -113,22 +113,6 @@ export function ResourcesPage({ isActive }: ResourcesPageProps) {
           </div>
         </div>
 
-        {/* Spotlight Section */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-[var(--text-heading-light)]">Spotlight (Future)</h2>
-          
-          <div className="bg-[var(--bg-light)] rounded-lg shadow-lg p-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-[var(--bg-accent-light)] rounded-full mb-4">
-              <i className="ti ti-spotlight text-2xl text-[var(--accent-primary)]"></i>
-            </div>
-            <p className="text-lg text-secondary mb-6">
-              In the future, we&apos;ll showcase projects submitted by our community. Got something cool you&apos;re working on?
-            </p>
-            <a href="/join" className="page-link inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300 transform hover:-translate-y-1">
-              Join Us <i className="ti ti-arrow-right ml-2"></i>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
