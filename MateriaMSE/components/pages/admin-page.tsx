@@ -184,9 +184,40 @@ export function AdminPage({ isActive }: AdminPageProps) {
       .trim();
   };
 
+  const isMissingTagsColumnError = (error: any) => {
+    const message = String(error?.message || '');
+    const lower = message.toLowerCase();
+
+    if (error?.code === '42703') return true;
+    if (lower.includes("could not find the 'tags' column")) return true;
+
+    // PostgREST commonly returns: column "tags" of relation "blog_posts" does not exist
+    if (lower.includes('column "tags"') && lower.includes('does not exist')) return true;
+
+    return false;
+  };
+
+  const formatBlogWriteError = (error: any) => {
+    if (!error) return 'Unknown error.';
+
+    if (error.code === '23505') {
+      return 'A post with this slug already exists. Update the slug and try again.';
+    }
+
+    if (isMissingTagsColumnError(error)) {
+      return 'Database schema is missing the tags column. Apply the Supabase migration to enable multi-tag support.';
+    }
+
+    return String(error.message || 'Unknown error.');
+  };
+
+  const normalizeFeaturedImage = (value: string) => {
+    const trimmed = value.trim();
+    return trimmed.length ? trimmed : null;
+  };
   const handleCreatePost = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!isSupabaseConfigured()) {
       alert('Blog post creation is not available at the moment.');
       return;
@@ -198,49 +229,69 @@ export function AdminPage({ isActive }: AdminPageProps) {
       const slug = newPost.slug || generateSlug(newPost.title);
       const tags = parseTagsInput(newPost.tagsText);
       const normalizedTags = tags.length > 0 ? tags : ['Basics'];
-      
-      const postData = {
+
+      const basePostData = {
         title: newPost.title,
         content: newPost.content,
         excerpt: newPost.excerpt,
-        featured_image: newPost.featured_image,
+        featured_image: normalizeFeaturedImage(newPost.featured_image),
         author: newPost.author.trim() || DEFAULT_AUTHOR,
-        tags: normalizedTags,
         category: normalizedTags[0],
         slug,
-        published: false // Always create as draft initially
+        published: false, // Always create as draft initially
       };
 
-      const result = await safeSupabaseOperation(
-        async () => {
-          const { error } = await supabase!
+      let created = false;
+      let tagsWarning = false;
+
+      // Prefer multi-tag writes, but gracefully fall back if the DB hasn't been migrated yet.
+      const { error } = await supabase!
+        .from('blog_posts')
+        .insert({ ...basePostData, tags: normalizedTags });
+
+      if (error) {
+        if (isMissingTagsColumnError(error)) {
+          const { error: fallbackError } = await supabase!
             .from('blog_posts')
-            .insert(postData);
-          if (error) throw error;
-          return true;
-        },
-        false
+            .insert(basePostData);
+          if (fallbackError) throw fallbackError;
+          created = true;
+          tagsWarning = true;
+        } else if (error.code === '23505') {
+          alert('A post with this slug already exists. Update the slug and try again.');
+          return;
+        } else {
+          throw error;
+        }
+      } else {
+        created = true;
+      }
+
+      if (!created) {
+        alert('Error creating blog post. Please try again.');
+        return;
+      }
+
+      alert(
+        tagsWarning
+          ? 'Blog post created successfully as a draft! Note: your database is missing the tags column, so only the primary category was saved.'
+          : 'Blog post created successfully as a draft!'
       );
 
-      if (result) {
-        alert('Blog post created successfully as a draft!');
-        setNewPost({
-          title: '',
-          content: '',
-          excerpt: '',
-          featured_image: '',
-          tagsText: DEFAULT_TAGS_TEXT,
-          author: DEFAULT_AUTHOR,
-          slug: ''
-        });
-        setShowCreatePost(false);
-        fetchData();
-      } else {
-        alert('Error creating blog post. Please try again.');
-      }
+      setNewPost({
+        title: '',
+        content: '',
+        excerpt: '',
+        featured_image: '',
+        tagsText: DEFAULT_TAGS_TEXT,
+        author: DEFAULT_AUTHOR,
+        slug: '',
+      });
+      setShowCreatePost(false);
+      fetchData();
     } catch (error) {
       console.error('Error creating post:', error);
-      alert('Error creating blog post. Please try again.');
+      alert('Error creating blog post. ' + formatBlogWriteError(error));
     } finally {
       setSavingPost(false);
     }
@@ -258,10 +309,9 @@ export function AdminPage({ isActive }: AdminPageProps) {
       slug: post.slug
     });
   };
-
   const handleUpdatePost = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!isSupabaseConfigured() || !editingPost) {
       alert('Blog post update is not available at the moment.');
       return;
@@ -273,50 +323,66 @@ export function AdminPage({ isActive }: AdminPageProps) {
       const slug = newPost.slug || generateSlug(newPost.title);
       const tags = parseTagsInput(newPost.tagsText);
       const normalizedTags = tags.length > 0 ? tags : ['Basics'];
-      
-      const postData = {
+
+      const basePostData = {
         title: newPost.title,
         content: newPost.content,
         excerpt: newPost.excerpt,
-        featured_image: newPost.featured_image,
+        featured_image: normalizeFeaturedImage(newPost.featured_image),
         author: newPost.author.trim() || DEFAULT_AUTHOR,
-        tags: normalizedTags,
         category: normalizedTags[0],
         slug,
-        updated_at: new Date().toISOString()
+        updated_at: new Date().toISOString(),
       };
 
-      const result = await safeSupabaseOperation(
-        async () => {
-          const { error } = await supabase!
-            .from('blog_posts')
-            .update(postData)
-            .eq('id', editingPost.id);
-          if (error) throw error;
-          return true;
-        },
-        false
-      );
+      let updated = false;
+      let tagsWarning = false;
 
-      if (result) {
-        alert('Blog post updated successfully!');
-        setNewPost({
-          title: '',
-          content: '',
-          excerpt: '',
-          featured_image: '',
-          tagsText: DEFAULT_TAGS_TEXT,
-          author: DEFAULT_AUTHOR,
-          slug: ''
-        });
-        setEditingPost(null);
-        fetchData();
+      const { error } = await supabase!
+        .from('blog_posts')
+        .update({ ...basePostData, tags: normalizedTags })
+        .eq('id', editingPost.id);
+
+      if (error) {
+        if (isMissingTagsColumnError(error)) {
+          const { error: fallbackError } = await supabase!
+            .from('blog_posts')
+            .update(basePostData)
+            .eq('id', editingPost.id);
+          if (fallbackError) throw fallbackError;
+          updated = true;
+          tagsWarning = true;
+        } else if (error.code === '23505') {
+          alert('A post with this slug already exists. Update the slug and try again.');
+          return;
+        } else {
+          throw error;
+        }
       } else {
-        alert('Error updating blog post. Please try again.');
+        updated = true;
       }
+
+      if (!updated) {
+        alert('Error updating blog post. Please try again.');
+        return;
+      }
+
+      alert(tagsWarning ? 'Blog post updated successfully! (Tags were not saved: missing tags column)' : 'Blog post updated successfully!');
+
+      setNewPost({
+        title: '',
+        content: '',
+        excerpt: '',
+        featured_image: '',
+        tagsText: DEFAULT_TAGS_TEXT,
+        author: DEFAULT_AUTHOR,
+        slug: '',
+      });
+      setEditingPost(null);
+      fetchData();
     } catch (error) {
       console.error('Error updating post:', error);
-      alert('Error updating blog post. Please try again.');
+      alert('Error updating blog post. ' + formatBlogWriteError(error));
     } finally {
       setSavingPost(false);
     }
