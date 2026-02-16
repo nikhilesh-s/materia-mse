@@ -10,6 +10,8 @@ interface JoinPageProps {
 export function JoinPage({ isActive }: JoinPageProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [subscribingToNewsletter, setSubscribingToNewsletter] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
   const [selectedMemberType, setSelectedMemberType] = useState('');
 
   useEffect(() => {
@@ -30,6 +32,91 @@ export function JoinPage({ isActive }: JoinPageProps) {
       }
     }
   }, [isActive]);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!isSupabaseConfigured()) {
+      alert('Newsletter subscription is not available at the moment. Please try again later.');
+      return;
+    }
+
+    const trimmedEmail = newsletterEmail.trim();
+    if (!trimmedEmail) {
+      return;
+    }
+
+    setSubscribingToNewsletter(true);
+
+    try {
+      const existingResult = await safeSupabaseOperation(
+        async () => {
+          const { data, error } = await supabase!
+            .from('newsletter_subscribers')
+            .select('email')
+            .eq('email', trimmedEmail)
+            .limit(1)
+            .then((res) => res);
+          return { data, error };
+        },
+        { data: [], error: null }
+      );
+
+      if (existingResult.error) {
+        throw existingResult.error;
+      }
+
+      if (existingResult.data && existingResult.data.length > 0) {
+        alert('You\'re already subscribed to our newsletter!');
+        setNewsletterEmail('');
+        setSubscribingToNewsletter(false);
+        return;
+      }
+
+      const insertResult = await safeSupabaseOperation(
+        async () => {
+          const { error } = await supabase!
+            .from('newsletter_subscribers')
+            .insert({ email: trimmedEmail })
+            .then((res) => res);
+          if (error) throw error;
+          return true;
+        },
+        false
+      );
+
+      if (!insertResult) {
+        throw new Error('Failed to add subscription to database');
+      }
+
+      try {
+        const emailResult = await safeSupabaseOperation(
+          async () => {
+            const { data, error } = await supabase!.functions.invoke('send-newsletter-confirmation', {
+              body: { email: trimmedEmail },
+            });
+            return { data, error };
+          },
+          { data: null, error: new Error('Email service not available') }
+        );
+
+        if (emailResult.error) {
+          alert('Subscribed successfully, but there was an issue sending the confirmation email. You\'re still subscribed!');
+        } else {
+          alert('Successfully subscribed to our newsletter! Check your email for confirmation.');
+        }
+      } catch {
+        alert('Subscribed successfully, but there was an issue sending the confirmation email. You\'re still subscribed!');
+      }
+
+      setNewsletterEmail('');
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
+      alert('Error subscribing to newsletter. Please try again.');
+    } finally {
+      setSubscribingToNewsletter(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -156,6 +243,49 @@ export function JoinPage({ isActive }: JoinPageProps) {
       <div className="content-container max-w-4xl mx-auto">
         <h1 className="page-title text-center">Join the Community</h1>
         <p className="text-lg text-secondary text-center max-w-3xl mx-auto mb-12"> Become part of a growing network dedicated to exploring and advancing the field of materials science. Choose the member type that best fits you. </p>
+
+        <div className="mb-12">
+          <div className="relative overflow-hidden rounded-2xl border border-[var(--border-light)] bg-[var(--bg-soft-light)] p-6 md:p-8 shadow-md">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[var(--accent-primary)]/12 via-[var(--accent-primary-lighter)]/8 to-[var(--accent-secondary)]/12"></div>
+            <div className="relative">
+              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-[var(--accent-primary)] mb-3">Newsletter</p>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
+                <span className="hero-highlight-gradient">Stay Updated with Materials Science</span>
+              </h2>
+              <p className="text-secondary mb-6">Get fresh insights, project highlights, and community updates delivered to your inbox.</p>
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl">
+                <label htmlFor="join-newsletter-email" className="sr-only">Email address</label>
+                <input
+                  type="email"
+                  name="join-newsletter-email"
+                  id="join-newsletter-email"
+                  required
+                  className="form-input flex-grow !mt-0"
+                  placeholder="Your email address"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  disabled={subscribingToNewsletter}
+                />
+                <button
+                  type="submit"
+                  disabled={subscribingToNewsletter}
+                  className="inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md text-sm transition duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                >
+                  {subscribingToNewsletter ? (
+                    <>
+                      <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-white mr-2"></div>
+                      Subscribing...
+                    </>
+                  ) : (
+                    <>
+                      Subscribe <i className="ti ti-send ml-2 text-xs"></i>
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-10" ref={formRef}>
           <div className="form-section">

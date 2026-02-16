@@ -223,6 +223,51 @@ export function HomePage({ isActive }: HomePageProps) {
         </div>
       </div>
 
+      <div className="py-16 md:py-20 bg-[var(--bg-soft-light)]">
+        <div className="content-container max-w-4xl mx-auto">
+          <div className="relative overflow-hidden rounded-2xl border border-[var(--border-light)] bg-[var(--bg-light)] p-8 md:p-10 shadow-md text-center">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[var(--accent-primary)]/12 via-[var(--accent-primary-lighter)]/8 to-[var(--accent-secondary)]/12"></div>
+            <div className="relative">
+              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-[var(--accent-primary)] mb-3">Newsletter</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+                <span className="hero-highlight-gradient">Stay Updated with Materials Science</span>
+              </h2>
+              <p className="text-secondary mb-6">Join our newsletter for the latest blog posts, insights, and community updates.</p>
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+                <label htmlFor="home-newsletter-email" className="sr-only">Email address</label>
+                <input
+                  type="email"
+                  name="home-newsletter-email"
+                  id="home-newsletter-email"
+                  required
+                  className="form-input flex-grow !mt-0"
+                  placeholder="Your email address"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  disabled={subscribing}
+                />
+                <button
+                  type="submit"
+                  disabled={subscribing}
+                  className="inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md text-sm transition duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                >
+                  {subscribing ? (
+                    <>
+                      <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-white mr-2"></div>
+                      Subscribing...
+                    </>
+                  ) : (
+                    <>
+                      Subscribe <i className="ti ti-send ml-2 text-xs"></i>
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="py-16 md:py-20 bg-[var(--bg-light)]">
         <div className="content-container">
           <div className="flex items-center justify-between gap-4 mb-8">
@@ -261,43 +306,6 @@ export function HomePage({ isActive }: HomePageProps) {
               <p className="text-secondary">Go to the Media page to view introduction and spotlight episodes from the YouTube channel.</p>
             </Link>
           </div>
-        </div>
-      </div>
-
-      <div className="py-16 md:py-20 bg-[var(--bg-soft-light)]">
-        <div className="content-container max-w-3xl mx-auto text-center">
-          <h2 className="text-xl md:text-2xl font-semibold mb-3">Stay Updated with Materials Science</h2>
-          <p className="text-secondary mb-6">Join our newsletter for the latest blog posts, insights, and community updates.</p>
-          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-            <label htmlFor="footer-email" className="sr-only">Email address</label>
-            <input
-              type="email"
-              name="footer-email"
-              id="footer-email"
-              required
-              className="form-input flex-grow !mt-0"
-              placeholder="Your email address"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              disabled={subscribing}
-            />
-            <button
-              type="submit"
-              disabled={subscribing}
-              className="inline-flex items-center justify-center bg-[var(--gradient-primary)] hover:opacity-95 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md text-sm transition duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            >
-              {subscribing ? (
-                <>
-                  <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-white mr-2"></div>
-                  Subscribing...
-                </>
-              ) : (
-                <>
-                  Subscribe <i className="ti ti-send ml-2 text-xs"></i>
-                </>
-              )}
-            </button>
-          </form>
         </div>
       </div>
 
