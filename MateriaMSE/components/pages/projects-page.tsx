@@ -4,6 +4,8 @@ interface ProjectsPageProps {
   isActive: boolean;
 }
 
+const DRAVIX_URL = 'https://dravix.materiamse.com';
+
 const projectCards = [
   {
     id: 'rp-ex-1',
@@ -18,6 +20,7 @@ const projectCards = [
     status: 'Project Spotlight',
     description:
       'A featured student initiative under Materia MSE. More build details, scope, and updates can be expanded here as project documentation grows.',
+    externalUrl: DRAVIX_URL,
   },
 ];
 
@@ -40,19 +43,42 @@ export function ProjectsPage({ isActive }: ProjectsPageProps) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projectCards.map((project) => (
-            <article
-              id={project.id}
-              key={project.id}
-              className="bg-[var(--bg-light)] border border-[var(--border-light)] rounded-xl p-6 shadow-md"
-            >
-              <span className="category-tag !bg-indigo-100 !text-indigo-700 !dark:bg-indigo-900/60 !dark:text-indigo-300 mb-4">
-                {project.status}
-              </span>
-              <h2 className="text-2xl font-semibold mb-3 text-[var(--text-heading-light)]">{project.title}</h2>
-              <p className="text-secondary">{project.description}</p>
-            </article>
-          ))}
+          {projectCards.map((project) => {
+            const cardContent = (
+              <>
+                <span className="category-tag !bg-indigo-100 !text-indigo-700 !dark:bg-indigo-900/60 !dark:text-indigo-300 mb-4">
+                  {project.status}
+                </span>
+                <h2 className="text-2xl font-semibold mb-3 text-[var(--text-heading-light)]">{project.title}</h2>
+                <p className="text-secondary">{project.description}</p>
+              </>
+            );
+
+            if (project.externalUrl) {
+              return (
+                <a
+                  id={project.id}
+                  key={project.id}
+                  href={project.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-[var(--bg-light)] border border-[var(--border-light)] rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300"
+                >
+                  {cardContent}
+                </a>
+              );
+            }
+
+            return (
+              <article
+                id={project.id}
+                key={project.id}
+                className="bg-[var(--bg-light)] border border-[var(--border-light)] rounded-xl p-6 shadow-md"
+              >
+                {cardContent}
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-10 bg-[var(--bg-light)] border border-[var(--border-light)] rounded-xl p-6 shadow-md text-center">

@@ -4,6 +4,8 @@ interface MediaPageProps {
   isActive: boolean;
 }
 
+const DRAVIX_URL = 'https://dravix.materiamse.com';
+
 const videoEmbeds = [
   {
     title: 'Introduction Video',
@@ -20,6 +22,7 @@ const videoEmbeds = [
     title: 'Project Spotlight: Dravix',
     description: 'A closer look at one of our featured student projects.',
     url: 'https://www.youtube.com/embed/0SJn6V6fdJ8',
+    externalUrl: DRAVIX_URL,
   },
 ];
 
@@ -65,7 +68,20 @@ export function MediaPage({ isActive }: MediaPageProps) {
                 loading="lazy"
               />
               <div className="p-5">
-                <h3 className="font-semibold text-[var(--text-heading-light)] mb-2">{video.title}</h3>
+                <h3 className="font-semibold text-[var(--text-heading-light)] mb-2">
+                  {video.externalUrl ? (
+                    <a
+                      href={video.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      {video.title}
+                    </a>
+                  ) : (
+                    video.title
+                  )}
+                </h3>
                 <p className="text-sm text-secondary">{video.description}</p>
               </div>
             </article>
